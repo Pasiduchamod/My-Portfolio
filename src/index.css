@@ -84,3 +84,7 @@ body{
 .btn-outline{
     @apply h-11 bg-zinc-800 hover:bg-zinc-600 active:bg-zinc-800
 }
+
+.section{
+    @apply pt-20 lg:pt-32
+}

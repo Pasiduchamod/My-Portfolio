@@ -15,11 +15,11 @@ body{
 }
 
 .navbar{
-    @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-[opacity,transform,filter] md:static md:flex md:items-center md:mt-0 md:opacity-100 md:blur-0
+    @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-full ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 transition-[opacity,transform,filter] md:static md:flex md:items-center md:mt-0 md:opacity-100 md:blur-0 gap-8
 }
 
 .navbar.active{
-    @apply opacity-100 scale-100 blur-0 visible
+    @apply opacity-100 scale-100 blur-0 visible rounded-md
 }
 
 .nav-link{
@@ -31,7 +31,7 @@ body{
 }
 
 .navbar .active-box{
-    @apply absolute bg-zinc-50 rounded-lg  -z-10 transition-[top,left] duration-500
+    @apply absolute bg-zinc-50 rounded-full  -z-10 transition-[top,left] duration-500
 }
 
 .btn{
@@ -70,7 +70,7 @@ body{
 }
 
 .headline-2{
-    @apply text-3xl lg:text-4xl lg:leading-tight font-semibold
+    @apply text-3xl lg:text-4xl lg:leading-tight font-semibold mb-10
 }
 
 .btn .material-symbols-rounded{
@@ -95,4 +95,20 @@ body{
 
 .title-1{
     @apply text-[22px] font-normal
+}
+
+.label{
+    @apply block text-zinc-200 text-sm font-normal mb-2
+}
+
+.text-field{
+    @apply block outline-none w-full px-3 py-3 text-sm bg-zinc-800 rounded-xl ring-1 ring-inset ring-transparent transition-shadow hover:ring-zinc-50/5 focus:ring-yellow-400 focus:ring-2
+}
+
+.text-field::placeholder{
+    @apply text-zinc-400
+}
+
+.reveal-up{
+    @apply translate-y-20 opacity-0
 }

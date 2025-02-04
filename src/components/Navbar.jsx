@@ -1,82 +1,64 @@
-import React from 'react'
-import { useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-const Navbar = ({navOpen}) => {
+const Navbar = ({ navOpen }) => {
+  const [activeSection, setActiveSection] = useState("#home");
+  const activeBox = useRef(null);
 
-    const lastActiveLink = useRef();
-    const activeBox = useRef();
+  const navItems = [
+    { label: "Home", link: "#home" },
+    { label: "About", link: "#about" },
+    { label: "Work", link: "#work" },
+    { label: "Contact", link: "#contact" }
+  ];
 
-    const initActiveBox = () =>{
-        activeBox.current.style.top =lastActiveLink.current.offsetTop +'px';
-        activeBox.current.style.left =lastActiveLink.current.offsetLeft +'px';
-        activeBox.current.style.width =lastActiveLink.current.offsetWidth +'px';
-        activeBox.current.style.height =lastActiveLink.current.offsetHeight +'px';
+  useEffect(() => {
+    const sections = navItems.map((item) => document.querySelector(item.link));
 
+    const handleScroll = () => {
+      let currentSection = "#home";
 
-    }
-
-    useEffect(initActiveBox,[]);
-    window.addEventListener('resize',initActiveBox);
-
-    const activeCurrentLink = (event)=>{
-        lastActiveLink.current?.classList.remove('active');
-        event.target.classList.add('active');
-        lastActiveLink.current = event.target;
-
-        activeBox.current.style.top =event.target.offsetTop +'px';
-        activeBox.current.style.left =event.target.offsetLeft +'px';
-        activeBox.current.style.width =event.target.offsetWidth +'px';
-        activeBox.current.style.height =event.target.offsetHeight +'px';
-    }
-
-    const navItems = [
-        {
-          label: 'Home',
-          link: '#home',
-          className: 'nav-link active',
-          ref: lastActiveLink
-        },
-        {
-          label: 'About',
-          link: '#about',
-          className: 'nav-link'
-        },
-        {
-          label: 'Work',
-          link: '#work',
-          className: 'nav-link'
-        },
-        {
-          label: 'Reviews',
-          link: '#reviews',
-          className: 'nav-link'
-        },
-        {
-          label: 'Contact',
-          link: '#contact',
-          className: 'nav-link md:hidden'
+      for (let section of sections) {
+        if (section && window.scrollY >= section.offsetTop - 100) {
+          currentSection = `#${section.id}`;
         }
-      ];
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const activeLink = document.querySelector(`.nav-link[href="${activeSection}"]`);
+    if (activeLink && activeBox.current) {
+      activeBox.current.style.top = `${activeLink.offsetTop}px`;
+      activeBox.current.style.left = `${activeLink.offsetLeft}px`;
+      activeBox.current.style.width = `${activeLink.offsetWidth}px`;
+      activeBox.current.style.height = `${activeLink.offsetHeight}px`;
+    }
+  }, [activeSection]);
 
   return (
-    <div>
-      <nav className={"navbar "+(navOpen?'active':'')}>
-        {
-            navItems.map(({label,link,className,ref},key)=>(
-                <a href={link} key={key} ref={ref} className={className} onClick={activeCurrentLink}>
-                    {label}
-                </a>
-            ))
-        }
-        <div className='active-box' ref={activeBox}></div>
-      </nav>
-    </div>
-  )
-}
+    <nav className={"navbar " + (navOpen ? "active" : "")}>
+      {navItems.map(({ label, link }) => (
+        <a
+          href={link}
+          key={link}
+          className={`nav-link ${activeSection === link ? "active" : ""}`}
+        >
+          {label}
+        </a>
+      ))}
+      <div className="active-box" ref={activeBox}></div>
+    </nav>
+  );
+};
 
-Navbar.propTypes={
-    navOpen:PropTypes.bool.isRequired
-}
+Navbar.propTypes = {
+  navOpen: PropTypes.bool.isRequired
+};
 
-export default Navbar
+export default Navbar;

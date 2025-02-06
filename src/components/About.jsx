@@ -27,7 +27,7 @@ const About = () => {
                         </div>
                         <p className="text-sm text-zinc-400">{label}</p>
                     </div>))}
-                    <img src='./src/assets/images/logo.png' width={30} className='ml-auto md:w-[40px] md:h-[40px]'></img>
+                    <img src='/assets/images/logo.png' width={30} className='ml-auto md:w-[40px] md:h-[40px]'></img>
                 </div>
             </div>
         </div>

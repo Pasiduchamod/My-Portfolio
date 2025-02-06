@@ -7,13 +7,13 @@ const Hero = () => {
         <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
             <div className='lg:block'>
                 <figure className="w-full max-w-[480px] mr-auto rounded-full border-[15px] border-yellow-300 shadow-[0px_4px_35px_rgba(255,255,0,0.5)] overflow-hidden">
-                    <img src='/src/assets/images/hero-banner-new.png' width={656} height={800} className='w-full'></img>
+                    <img src='/assets/images/hero-banner-new.png' width={656} height={800} className='w-full'></img>
                 </figure>
             </div>
             <div className='ml-auto'>
                 <div className="flex items-center gap-3">
                     <figure className='img-box w-9 h-9 rounded-lg'>
-                        <img src='src/assets/images/avatar-1.jpg' width={40} height={40} className='img-cover'></img>
+                        <img src='/assets/images/avatar-1.jpg' width={40} height={40} className='img-cover'></img>
                     </figure>
                     <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide">
                         <span className='relative w-2 h-2 rounded-full bg-orange-400'>
@@ -29,15 +29,9 @@ const Hero = () => {
                 <ButtonPrimary
                     label="Download CV"
                     icon="download"
-                    onClick={() => {
-                        const link = document.createElement('a');
-                        link.href = 'D:/Projects/React/Portfolio/my-portfolio/src/assets/images/CV/Resume.pdf';
-                        link.download = 'Pasidu-Resume.pdf';
-                        link.click();
-                    }}
+                    href="https://res.cloudinary.com/dwbvthjie/image/upload/v1738776762/Resume_smjbkk.jpg?fl_attachment=true"
                 />
-
-                    <ButtonOutline href="#about" label="Scroll down" icon="arrow_downward"/>
+                <ButtonOutline href="#about" label="Scroll down" icon="arrow_downward"/>
                 </div>
             </div>
         </div>

@@ -4,12 +4,6 @@ import ProjectCard from './ProjectCard';
 
 const works = [
     {
-      imgSrc: 'src/assets/images/projects/anupama.png',
-      title: 'Anupama Collection',
-      tags: ['API', 'Web-design', 'Development'],
-      projectLink: 'https://anupama-frontend.vercel.app/'
-    },
-    {
       imgSrc: '/assets/images/projects/zaaraai.png',
       title: 'ZaaraAI',
       tags: ['API', 'Web-design', 'Development'],

@@ -4,6 +4,18 @@ import ProjectCard from './ProjectCard';
 
 const works = [
     {
+      imgSrc: '/assets/images/projects/anupama.png',
+      title: 'ZaaraAI',
+      tags: ['API', 'Web-design', 'Development'],
+      projectLink: 'https://zaaraai.web.app/'
+    },
+    {
+      imgSrc: '/assets/images/projects/zaaraai.png',
+      title: 'ZaaraAI',
+      tags: ['API', 'Web-design', 'Development'],
+      projectLink: 'https://zaaraai.web.app/'
+    },
+    {
       imgSrc: '/assets/images/projects/evercare.png',
       title: 'Doctor Booking App',
       tags: ['API', 'Web-design', 'Development'],

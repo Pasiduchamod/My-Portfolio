@@ -4,6 +4,12 @@ import ProjectCard from './ProjectCard';
 
 const works = [
     {
+      imgSrc: '/assets/images/projects/anupama.png',
+      title: 'Anupama Collections',
+      tags: ['API', 'Web-design', 'Development','MERN'],
+      projectLink: 'https://anupama-frontend.vercel.app/'
+    },
+    {
       imgSrc: '/assets/images/projects/zaaraai.png',
       title: 'ZaaraAI',
       tags: ['API', 'Web-design', 'Development'],
@@ -12,7 +18,7 @@ const works = [
     {
       imgSrc: '/assets/images/projects/evercare.png',
       title: 'Doctor Booking App',
-      tags: ['API', 'Web-design', 'Development'],
+      tags: ['API', 'Web-design', 'Development','MERN'],
       projectLink: 'https://github.com/Pasiduchamod/EverCare-Health.git'
     },
     {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonOutline, ButtonPrimary } from './button'
+import { ButtonOutline, ButtonPrimary } from './Button'
 
 const Hero = () => {
   return (

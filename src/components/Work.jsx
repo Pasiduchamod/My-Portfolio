@@ -4,6 +4,12 @@ import ProjectCard from './ProjectCard';
 
 const works = [
     {
+      imgSrc: '/assets/images/projects/nexora.png',
+      title: 'nexora Real-Time Chat Application',
+      tags: ['API', 'Data-base', 'Development'],
+      projectLink: 'https://nexora-plum.vercel.app/'
+    },
+    {
       imgSrc: '/assets/images/projects/anupama.png',
       title: 'Anupama Collections',
       tags: ['API', 'Web-design', 'Development','MERN'],

@@ -38,6 +38,12 @@ const skillItem = [
       label: 'TailwindCSS',
       desc: 'User Interface'
     },
+    {
+      imgSrc: '/assets/images/firebase.svg',
+      label: 'Firebase',
+      desc: 'Backend & Database'
+    }
+
   ];
 
 const Skill = () => {

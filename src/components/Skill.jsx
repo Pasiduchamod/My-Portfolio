@@ -1,71 +1,105 @@
-import React from 'react'
-import SkillCard from './SkillCard';
+import React from "react";
+import SkillCard from "./SkillCard";
 
 const skillItem = [
-    
-    {
-      imgSrc: '/assets/images/css3.svg',
-      label: 'CSS',
-      desc: 'User Interface'
-    },
-    {
-      imgSrc: '/assets/images/javascript.svg',
-      label: 'JavaScript',
-      desc: 'Interaction'
-    },
-    {
-      imgSrc: '/assets/images/nodejs.svg',
-      label: 'NodeJS',
-      desc: 'Web Server'
-    },
-    {
-      imgSrc: '/assets/images/expressjs.svg',
-      label: 'ExpressJS',
-      desc: 'Node Framework'
-    },
-    {
-      imgSrc: '/assets/images/mongodb.svg',
-      label: 'MongoDB',
-      desc: 'Database'
-    },
-    {
-      imgSrc: '/assets/images/react.svg',
-      label: 'React',
-      desc: 'Framework'
-    },
-    {
-      imgSrc: '/assets/images/tailwindcss.svg',
-      label: 'TailwindCSS',
-      desc: 'User Interface'
-    },
-    {
-      imgSrc: '/assets/images/firebase.svg',
-      label: 'Firebase',
-      desc: 'Backend & Database'
-    }
+  {
+    imgSrc: "/assets/images/css3.svg",
+    label: "CSS",
+    desc: "User Interface",
+  },
+  {
+    imgSrc: "/assets/images/tailwindcss.svg",
+    label: "TailwindCSS",
+    desc: "User Interface",
+  },
+  {
+    imgSrc: "/assets/images/javascript.svg",
+    label: "JavaScript",
+    desc: "Interaction",
+  },
+  {
+    imgSrc: "/assets/images/react.svg",
+    label: "React",
+    desc: "Framework",
+  },
 
-  ];
+  // Backend
+  {
+    imgSrc: "/assets/images/nodejs.svg",
+    label: "NodeJS",
+    desc: "Web Server",
+  },
+  {
+    imgSrc: "/assets/images/expressjs.svg",
+    label: "ExpressJS",
+    desc: "Node Framework",
+  },
+  {
+    imgSrc: "/assets/images/firebase.svg",
+    label: "Firebase",
+    desc: "Backend & Database",
+  },
+
+  // Database
+  {
+    imgSrc: "/assets/images/mongodb.svg",
+    label: "MongoDB",
+    desc: "NoSQL Database",
+  },
+  {
+    imgSrc: "/assets/images/mysql.svg",
+    label: "MySQL",
+    desc: "Relational Database",
+  },
+
+  // DevOps & Cloud
+  {
+    imgSrc: "/assets/images/docker.svg",
+    label: "Docker",
+    desc: "Containerization",
+  },
+  {
+    imgSrc: "/assets/images/aws.png",
+    label: "AWS",
+    desc: "Cloud Services",
+  },
+  {
+    imgSrc: "/assets/images/salesforce.png",
+    label: "Salesforce",
+    desc: "CRM Platform",
+  },
+
+  // Tools
+  {
+    imgSrc: "/assets/images/postman.svg",
+    label: "Postman",
+    desc: "API Testing",
+  },
+];
 
 const Skill = () => {
   return (
-    <section className='section'>
-        <div className="container">
-            <h2 className="headline-2 reveal-up">
-                Tools I use
-            </h2>
-            <p className='text-zinc-400 mt-3 mb-8 max-w-[50ch]'>
-            Discover the powerful tools and technologies I use to create exceptional, high-performing websites & applications.
-            </p>
-            <div className="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
-                {
-                    skillItem.map(({imgSrc,label,desc},key)=>(
-                        <SkillCard key={key} imgSrc={imgSrc} label={label} desc={desc} classes="reveal-up"/>
-                    ))
-                }
-            </div>
+    <section className="section">
+      <div className="container">
+        <h2 className="headline-2 reveal-up">Tools I use</h2>
+        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch]">
+          Discover the powerful tools and technologies I use to create
+          exceptional, high-performing websites & applications.
+        </p>
+        <div className="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
+          {skillItem.map(({ imgSrc, label, desc }, key) => (
+            <SkillCard
+              key={key}
+              imgSrc={imgSrc}
+              label={label}
+              desc={desc}
+              classes="reveal-up"
+            />
+          ))}
         </div>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default Skill
+export default Skill;

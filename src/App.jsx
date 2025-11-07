@@ -15,6 +15,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
 import { element } from "prop-types";
+import CollaborativeWork from "./components/CollaborativeWork";
+import AchievementsHighlights from "./components/AchievementsHighlights";
 
 gsap.registerPlugin(useGSAP,ScrollTrigger); 
 
@@ -49,6 +51,8 @@ const App = () =>{
             <About/>
             <Skill/>
             <Work/>
+            <CollaborativeWork/>
+            <AchievementsHighlights/>
             <Contact/>
         </main>
         <Footer/>

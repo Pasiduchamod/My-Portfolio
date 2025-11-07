@@ -5,26 +5,24 @@ const collaborativeWorks = [
   {
     imgSrc: "/assets/images/projects/creatorsspace.png",
     title: "Creators-Space E-Learning Management System",
-    desc: "An open-source e-learning platform built for university students with features like assignment tracking, lecturer communication, and AI chatbot integration.",
     tags: ["Team Project", "Open Source"],
     projectLink: "https://github.com/PamudaUposath/Creators-Space-GroupProject",
   },
   {
     imgSrc: "/assets/images/projects/uniconnect.png",
     title: "AgentForce Chatbot System",
-    desc: "AI-powered academic assistant integrated into university portals to help students with schedules, reminders, and academic queries.",
     tags: ["Hackathon", "AI", "Team Project"],
-    projectLink:
-      "https://universityofjaffna4-dev-ed.develop.my.site.com/s/?language=en_US",
+    projectLink: "https://universityofjaffna4-dev-ed.develop.my.site.com/s/?language=en_US",
   },
   {
     imgSrc: "/assets/images/projects/blooddonation.png",
-    title: "AgentForce Chatbot System",
-    desc: "AI-powered academic assistant integrated into university portals to help students with schedules, reminders, and academic queries.",
+    title: "Blood Donation Tracking System",
     tags: ["Hackathon", "Ballerina", "Team Project"],
     projectLink: "https://github.com/PamudaUposath/iwb25-296-genalphaz",
   },
 ];
+
+
 
 const CollaborativeWork = () => {
   return (

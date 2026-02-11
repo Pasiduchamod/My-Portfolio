@@ -1,17 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 const ProjectCard = ({
     imgSrc,
     title,
     tags,
-    projectLink,
-    classes
+    links, // Changed from projectLink
+    classes,
+    imgClass = 'img-cover'
 }) => {
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  // Helper to handle card click
+  const handleCardClick = (e) => {
+    const linkKeys = Object.keys(links || {});
+    
+    // If only one link, let the default anchor handle it (if it existed) 
+    // or manually redirect if multiple links are not present
+    if (linkKeys.length === 1) {
+      window.open(links[linkKeys[0]], '_blank');
+      return;
+    }
+    
+    // If multiple links, show overlay
+    if (linkKeys.length > 1) {
+      e.preventDefault();
+      setShowOverlay(true);
+    }
+  };
+
+  const getLinkIcon = (key) => {
+    switch (key.toLowerCase()) {
+      case 'repo':
+      case 'github': return 'code';
+      case 'live':
+      case 'site': return 'language';
+      case 'playstore':
+      case 'app': return 'shop';
+      default: return 'open_in_new';
+    }
+  };
+
+  const getLinkLabel = (key) => {
+    switch (key.toLowerCase()) {
+      case 'repo':
+      case 'github': return 'Repository';
+      case 'live':
+      case 'site': return 'Live Demo';
+      case 'playstore': return 'Play Store';
+      default: return key.charAt(0).toUpperCase() + key.slice(1);
+    }
+  };
+
   return (
-    <div className={"relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors " + classes}>
+    <div 
+        className={"relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors group cursor-pointer " + classes}
+        onClick={handleCardClick}
+    >
         <figure className='img-box aspect-square rounded-lg mb-4'>
-            <img src={imgSrc} loading='lazy' className='img-cover'></img>
+            <img src={imgSrc} loading='lazy' className={imgClass}></img>
         </figure>
         <div className='flex items-center justify-between gap-4'>
             <div>
@@ -26,16 +73,45 @@ const ProjectCard = ({
                 <span className='material-symbols-rounded' aria-hidden="true">arrow_outward</span>
             </div>
         </div>
-        <a href={projectLink} className="absolute inset-0" target='_blank'></a>
+
+        {/* Overlay for multiple links */}
+        <div className={`project-overlay ${showOverlay ? 'active' : ''}`} onClick={(e) => e.stopPropagation()}>
+            <button 
+                className="close-overlay"
+                onClick={() => setShowOverlay(false)}
+            >
+                <span className="material-symbols-rounded">close</span>
+            </button>
+            <h4 className="text-xl font-semibold mb-2 text-zinc-100">{title}</h4>
+            <p className="text-sm text-zinc-400 mb-4">Choose a link to visit:</p>
+            
+            <div className="flex flex-col gap-3 w-full items-center">
+                {Object.entries(links || {}).map(([key, url]) => (
+                    <a 
+                        key={key}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`overlay-btn ${key === 'live' || key === 'playstore' ? 'primary' : ''}`}
+                    >
+                        <span className="material-symbols-rounded">{getLinkIcon(key)}</span>
+                        {getLinkLabel(key)}
+                    </a>
+                ))}
+            </div>
+        </div>
     </div>
   )
 }
+
 ProjectCard.propTypes = {
     imgSrc:PropTypes.string.isRequired,
     title:PropTypes.string.isRequired,
     tags:PropTypes.array.isRequired,
-    projectLink:PropTypes.string,
+    links:PropTypes.object,
     classes:PropTypes.string,
+    imgClass:PropTypes.string
 }
 
 export default ProjectCard
+

@@ -6,67 +6,67 @@ const works = [
     imgSrc: "/assets/images/projects/nexora.png",
     title: "nexora Real-Time Chat Application",
     tags: ["API", "Data-base", "Development"],
-    projectLink: "https://nexora-plum.vercel.app/",
+    links: { live: "https://nexora-plum.vercel.app/", repo: "https://github.com/Pasiduchamod/nexora-chat-app.git" },
   },
   {
     imgSrc: "/assets/images/projects/anupama.png",
     title: "Anupama Collections",
     tags: ["API", "Web-design", "Development", "MERN"],
-    projectLink: "https://anupama-frontend.vercel.app/",
+    links: { live: "https://anupama-frontend.vercel.app/", repo: "https://github.com/Pasiduchamod/Anupama_Full_Stack.git" },
   },
   {
     imgSrc: "/assets/images/projects/zaaraai.png",
     title: "ZaaraAI",
     tags: ["API", "Web-design", "Development"],
-    projectLink: "https://zaaraai.web.app/",
+    links: { live: "https://zaaraai.web.app/", repo: "https://github.com/Pasiduchamod/Chat-bot.git" },
   },
   {
     imgSrc: "/assets/images/projects/evercare.png",
     title: "Doctor Booking App",
     tags: ["API", "Web-design", "Development", "MERN"],
-    projectLink: "https://github.com/Pasiduchamod/EverCare-Health.git",
+    links: { repo: "https://github.com/Pasiduchamod/EverCare-Health.git" },
   },
   {
     imgSrc: "/assets/images/projects/university.png",
     title: "University Website",
     tags: ["Web-design", "Development"],
-    projectLink: "https://pasiduchamod.github.io/University-web-site/",
+    links: { live: "https://pasiduchamod.github.io/University-web-site/", repo: "https://github.com/Pasiduchamod/University-web-site.git" },
   },
   {
     imgSrc: "/assets/images/projects/passwordgenerator.png",
     title: "Random Password Generator",
     tags: ["Development"],
-    projectLink: "https://pasiduchamod.github.io/Random-Password/",
+    links: { live: "https://pasiduchamod.github.io/Random-Password/", repo: "https://github.com/Pasiduchamod/Random-Password.git" },
   },
   {
     imgSrc: "/assets/images/projects/todo.png",
     title: "To-Do List App",
     tags: ["Development"],
-    projectLink: "https://pasiduchamod.github.io/to-do-app/",
+    links: { live: "https://pasiduchamod.github.io/to-do-app/", repo: "https://github.com/Pasiduchamod/to-do-app.git" },
   },
   {
     imgSrc: "/assets/images/projects/weather-app.png",
     title: "Weather App",
     tags: ["API", "Development"],
-    projectLink: "https://pasiduchamod.github.io/weather-app/",
+    links: { live: "https://pasiduchamod.github.io/weather-app/", repo: "https://github.com/Pasiduchamod/weather-app.git" },
   },
   {
     imgSrc: "/assets/images/projects/agecalculator.png",
     title: "Age Calculator",
     tags: ["Development"],
-    projectLink: "https://pasiduchamod.github.io/Age-Calculator/",
+    links: { live: "https://pasiduchamod.github.io/Age-Calculator/", repo: "https://github.com/Pasiduchamod/Age-Calculator.git" },
   },
   {
     imgSrc: "/assets/images/projects/qrgenerator.png",
     title: "QR Code Generator",
     tags: ["Development"],
-    projectLink: "https://pasiduchamod.github.io/QR-Generator/",
+    links: { live: "https://pasiduchamod.github.io/QR-Generator/", repo: "https://github.com/Pasiduchamod/QR-Generator.git" },
   },
   {
     imgSrc: "/assets/images/projects/quizapp.png",
     title: "Quiz App",
     tags: ["Development"],
-    projectLink: "https://pasiduchamod.github.io/Quiz-App/",
+    links: { live: "https://pasiduchamod.github.io/Quiz-App/", repo: "https://github.com/Pasiduchamod/Quiz-App.git" },
   },
 ];
 
@@ -82,13 +82,13 @@ const Work = () => {
         </p>
 
         <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
-          {works.map(({ imgSrc, title, tags, projectLink }, key) => (
+          {works.map(({ imgSrc, title, tags, links }, key) => (
             <ProjectCard
               key={key}
               imgSrc={imgSrc}
               title={title}
               tags={tags}
-              projectLink={projectLink}
+              links={links}
               classes="reveal-up"
             />
           ))}

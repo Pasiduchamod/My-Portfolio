@@ -58,6 +58,10 @@ body{
     @apply w-full h-full object-cover
 }
 
+.img-contain{
+    @apply w-full h-full object-contain bg-zinc-700/50
+}
+
 .headline-1,.headline-2{
     @apply max-w-max;
     background: -webkit-linear-gradient(0deg,#fafafa,#a1a1aa);
@@ -111,4 +115,29 @@ body{
 
 .reveal-up{
     @apply translate-y-20 opacity-0
+}
+
+/* Project Link Overlay */
+.project-overlay {
+    @apply absolute inset-0 z-20 flex flex-col items-center justify-center gap-4 p-6 bg-zinc-900/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 rounded-2xl;
+}
+
+.project-overlay.active {
+    @apply opacity-100 pointer-events-auto;
+}
+
+.overlay-btn {
+    @apply w-full max-w-[200px] h-12 flex items-center justify-center gap-3 px-6 rounded-xl font-medium text-sm transition-all duration-200 border border-zinc-50/10 hover:border-yellow-400/50 hover:bg-zinc-800;
+}
+
+.overlay-btn.primary {
+    @apply bg-yellow-400 text-zinc-950 border-none hover:bg-yellow-200;
+}
+
+.overlay-btn .material-symbols-rounded {
+    @apply text-xl;
+}
+
+.close-overlay {
+    @apply absolute top-4 right-4 w-10 h-10 grid place-items-center rounded-full bg-zinc-50/5 hover:bg-zinc-50/10 transition-colors text-zinc-400 hover:text-zinc-50;
 }

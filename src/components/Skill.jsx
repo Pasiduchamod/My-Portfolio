@@ -3,75 +3,95 @@ import SkillCard from "./SkillCard";
 
 const skillItem = [
   {
-    imgSrc: "/assets/images/css3.svg",
+    imgSrc: "/assets/images/Tools_icons/css3.svg",
     label: "CSS",
     desc: "User Interface",
   },
   {
-    imgSrc: "/assets/images/tailwindcss.svg",
+    imgSrc: "/assets/images/Tools_icons/tailwindcss.svg",
     label: "TailwindCSS",
     desc: "User Interface",
   },
   {
-    imgSrc: "/assets/images/javascript.svg",
+    imgSrc: "/assets/images/Tools_icons/javascript.svg",
     label: "JavaScript",
     desc: "Interaction",
   },
   {
-    imgSrc: "/assets/images/react.svg",
+    imgSrc: "/assets/images/Tools_icons/react.svg",
     label: "React",
     desc: "Framework",
   },
 
   // Backend
   {
-    imgSrc: "/assets/images/nodejs.svg",
+    imgSrc: "/assets/images/Tools_icons/nodejs.svg",
     label: "NodeJS",
     desc: "Web Server",
   },
   {
-    imgSrc: "/assets/images/expressjs.svg",
+    imgSrc: "/assets/images/Tools_icons/expressjs.svg",
     label: "ExpressJS",
     desc: "Node Framework",
   },
   {
-    imgSrc: "/assets/images/firebase.svg",
+    imgSrc: "/assets/images/Tools_icons/firebase.svg",
     label: "Firebase",
     desc: "Backend & Database",
   },
 
   // Database
   {
-    imgSrc: "/assets/images/mongodb.svg",
+    imgSrc: "/assets/images/Tools_icons/mongodb.svg",
     label: "MongoDB",
     desc: "NoSQL Database",
   },
   {
-    imgSrc: "/assets/images/mysql.svg",
+    imgSrc: "/assets/images/Tools_icons/mysql.svg",
     label: "MySQL",
     desc: "Relational Database",
   },
 
   // DevOps & Cloud
   {
-    imgSrc: "/assets/images/docker.svg",
+    imgSrc: "/assets/images/Tools_icons/docker.svg",
     label: "Docker",
     desc: "Containerization",
   },
   {
-    imgSrc: "/assets/images/aws.png",
+    imgSrc: "/assets/images/Tools_icons/aws.png",
     label: "AWS",
     desc: "Cloud Services",
   },
   {
-    imgSrc: "/assets/images/salesforce.png",
+    imgSrc: "/assets/images/Tools_icons/salesforce.png",
     label: "Salesforce",
     desc: "CRM Platform",
+  },
+  {
+    imgSrc: "/assets/images/Tools_icons/jenkins.svg",
+    label: "Jenkins",
+    desc: "CI/CD",
+  },
+  {
+    imgSrc: "/assets/images/Tools_icons/kubernetes.png",
+    label: "Kubernetes",
+    desc: "Container Orchestration",
+  },
+  {
+    imgSrc: "/assets/images/Tools_icons/terraform.webp",
+    label: "Terraform",
+    desc: "Infrastructure as Code",
+  },
+  {
+    imgSrc: "/assets/images/Tools_icons/sonarqube.png",
+    label: "SonarQube",
+    desc: "Code Quality",
   },
 
   // Tools
   {
-    imgSrc: "/assets/images/postman.svg",
+    imgSrc: "/assets/images/Tools_icons/postman.svg",
     label: "Postman",
     desc: "API Testing",
   },

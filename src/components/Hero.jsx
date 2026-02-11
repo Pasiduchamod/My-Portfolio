@@ -29,7 +29,7 @@ const Hero = () => {
                 <ButtonPrimary
                     label="Download CV"
                     icon="download"
-                    href="https://res.cloudinary.com/dwbvthjie/image/upload/v1738776762/Resume_smjbkk.jpg?fl_attachment=true"
+                    href="/assets/images/CV/Resume.pdf"
                 />
                 <ButtonOutline href="#about" label="Scroll down" icon="arrow_downward"/>
                 </div>

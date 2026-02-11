@@ -6,19 +6,25 @@ const collaborativeWorks = [
     imgSrc: "/assets/images/projects/creatorsspace.png",
     title: "Creators-Space E-Learning Management System",
     tags: ["Team Project", "Open Source"],
-    projectLink: "https://github.com/PamudaUposath/Creators-Space-GroupProject",
+    links: { repo: "https://github.com/PamudaUposath/Creators-Space-GroupProject" },
   },
   {
     imgSrc: "/assets/images/projects/uniconnect.png",
     title: "AgentForce Chatbot System",
     tags: ["Hackathon", "AI", "Team Project"],
-    projectLink: "https://universityofjaffna4-dev-ed.develop.my.site.com/s/?language=en_US",
+    links: { live: "https://universityofjaffna4-dev-ed.develop.my.site.com/s/?language=en_US" },
   },
   {
     imgSrc: "/assets/images/projects/blooddonation.png",
     title: "Blood Donation Tracking System",
     tags: ["Hackathon", "Ballerina", "Team Project"],
-    projectLink: "https://github.com/PamudaUposath/iwb25-296-genalphaz",
+    links: { repo: "https://github.com/PamudaUposath/iwb25-296-genalphaz" },
+  },
+  {
+    imgSrc: "/assets/images/projects/lankasafe.png",
+    title: "Emergency Alert System",
+    tags: ["Hackathon", "Team Project"],
+    links: { repo: "https://github.com/Pasiduchamod/APIIT-HACK" },
   },
 ];
 
@@ -37,14 +43,14 @@ const CollaborativeWork = () => {
 
         <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
           {collaborativeWorks.map(
-            ({ imgSrc, title, desc, tags, projectLink }, key) => (
+            ({ imgSrc, title, desc, tags, links }, key) => (
               <ProjectCard
                 key={key}
                 imgSrc={imgSrc}
                 title={title}
                 desc={desc}
                 tags={tags}
-                projectLink={projectLink}
+                links={links}
                 classes="reveal-up"
               />
             )

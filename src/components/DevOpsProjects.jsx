@@ -8,6 +8,12 @@ const devOpsWorks = [
     tags: ["Jenkins", "Docker", "SonarQube", "AWS", "GitHub"],
     links: { repo: "https://github.com/Pasiduchamod/Jenkins-CI-CD-Pipeline---SonarQube-Docker-Github-Webhooks-on-AWS", }, 
   },
+  {
+    imgSrc: "/assets/images/devops_projects/pr_2.png",
+    title: "Deploying a React App on Kubernetes using Minikube and Docker",
+    tags: ["Docker", "Kubernetes", "AWS", "Minikube", "Dockerhub"],
+    links: { repo: "https://github.com/Pasiduchamod/react-kubernetes-deployment", }, 
+  },
 ];
 
 const DevOpsProjects = () => {

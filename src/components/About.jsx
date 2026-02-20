@@ -3,7 +3,7 @@ import React from 'react';
 const aboutItems = [
   {
     label: 'Projects Completed',
-    number: 15
+    number: 20
   },
   {
     label: 'Years of Experience',

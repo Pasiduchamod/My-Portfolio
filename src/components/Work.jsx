@@ -3,6 +3,12 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
+    imgSrc: "/assets/images/projects/ieee_congress.png",
+    title: "IEEE SLSWYC '26 Official Website",
+    tags: ["Full Stack", "GSAP", "Development"],
+    links: { live: "https://ieee-slsywc-2026.vercel.app/", repo: "https://github.com/Pasiduchamod/ieee-slsywc-2026.git" },
+  },
+  {
     imgSrc: "/assets/images/projects/nexora.png",
     title: "nexora Real-Time Chat Application",
     tags: ["API", "Data-base", "Development"],

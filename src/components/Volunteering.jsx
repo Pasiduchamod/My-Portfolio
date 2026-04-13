@@ -75,8 +75,6 @@ const Volunteering = () => {
       gsap.fromTo(item, 
         {
           opacity: 0,
-          x: isEven ? 100 : -100, // Slide from right if even (actually even is on the left side in my logic because of flex-row-reverse, let me double check)
-          // Wait, in my code: key % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
           // If key % 2 === 0, it is flex-row-reverse, so content is on the LEFT side of the line.
           // So if index is even, it should slide from the LEFT (-100).
           x: isEven ? -100 : 100,

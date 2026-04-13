@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html{
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth;  Remove this as it conflicts with Lenis */
 }
 
 body{

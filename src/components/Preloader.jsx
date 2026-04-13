@@ -26,6 +26,8 @@ const Preloader = () => {
             onComplete: () => {
                 clearInterval(textInterval);
                 setIsLoading(false);
+                document.body.style.overflow = 'auto';
+                document.documentElement.style.overflow = 'auto';
             }
         });
 
@@ -49,9 +51,11 @@ const Preloader = () => {
         });
 
         document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
         
         return () => {
             document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
             clearInterval(textInterval);
         };
     }, []);

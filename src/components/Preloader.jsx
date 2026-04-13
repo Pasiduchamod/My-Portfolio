@@ -16,11 +16,11 @@ const Preloader = () => {
 
         let textIndex = 0;
         const textInterval = setInterval(() => {
-            if (textIndex < loadingSequences.length - 1) {
+            if (textIndex < loadingSequences.length) {
                 setLoadingText(loadingSequences[textIndex]);
                 textIndex++;
             }
-        }, 400);
+        }, 1000);
 
         const tl = gsap.timeline({
             onComplete: () => {
@@ -39,14 +39,16 @@ const Preloader = () => {
         // 2. Progress Bar animation
         .to(".preloader-progress-bar", {
             width: "100%",
-            duration: 2.2,
+            duration: 4.0,
             ease: "none"
         })
-        // 3. Slide the whole preloader up to reveal the site
+        // 3. Smooth Fade Out and Scale Up instead of Sliding Up
         .to(".preloader-container", {
-            y: "-100%",
-            duration: 1,
-            ease: "expo.inOut",
+            opacity: 0,
+            scale: 1.1,
+            pointerEvents: 'none',
+            duration: 1.2,
+            ease: "power3.inOut",
             delay: 0.2
         });
 

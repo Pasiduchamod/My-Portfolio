@@ -10,7 +10,8 @@ import Skill from "./components/Skill";
 import Work from "./components/Work";
 import DevOpsProjects from "./components/DevOpsProjects";
 
-import { ReactLenis } from 'lenis/react'  
+import { ReactLenis, useLenis } from 'lenis/react'  
+import { useEffect } from "react";
 
 import { gsap } from "gsap";    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -27,6 +28,15 @@ gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 
 const App = () =>{
+    const lenis = useLenis();
+
+    useEffect(() => {
+        function update(time) {
+          lenis?.raf(time * 1000)
+        }
+        gsap.ticker.add(update)
+        return () => gsap.ticker.remove(update)
+    }, [lenis])
 
     useGSAP(()=>{
         const elements = gsap.utils.toArray('.reveal-up');
@@ -36,20 +46,20 @@ const App = () =>{
             gsap.to(element,{
                 scrollTrigger:{
                     trigger:element,
-                    start:'-200 bottom',
-                    end:'bottom 80%',
-                    scrub:true
+                    start:'top 85%',
+                    end:'bottom 60%',
+                    toggleActions: 'play none none reverse'
                 },
                 y:0,
                 opacity:1,
-                duration:1,
+                duration:1.2,
                 ease:'power2.out'
             })
         });
     });
 
     return (
-    <ReactLenis root>
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true, smoothTouch: true }}>
         <Preloader />
         <Header/>
         <main>

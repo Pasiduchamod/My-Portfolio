@@ -1,7 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { useLenis } from "lenis/react";
 
 const Navbar = ({ navOpen }) => {
+  const lenis = useLenis();
   const [activeSection, setActiveSection] = useState("#home");
   const activeBox = useRef(null);
 
@@ -52,6 +54,10 @@ const Navbar = ({ navOpen }) => {
           href={link}
           key={link}
           className={`nav-link ${activeSection === link ? "active" : ""}`}
+          onClick={(e) => {
+            e.preventDefault();
+            lenis?.scrollTo(link);
+          }}
         >
           {label}
         </a>

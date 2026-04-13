@@ -41,12 +41,11 @@ const App = () =>{
     useGSAP(()=>{
         const elements = gsap.utils.toArray('.reveal-up');
         
-        
         elements.forEach((element)=>{
             gsap.to(element,{
                 scrollTrigger:{
                     trigger:element,
-                    start:'top 85%',
+                    start:'top 90%',
                     end:'bottom 60%',
                     toggleActions: 'play none none reverse'
                 },
@@ -56,6 +55,9 @@ const App = () =>{
                 ease:'power2.out'
             })
         });
+
+        // Refresh ScrollTrigger after all content is potentially loaded
+        window.addEventListener('load', () => ScrollTrigger.refresh());
     });
 
     return (

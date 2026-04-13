@@ -23,6 +23,17 @@ const AchievementsHighlights = () => {
           teamwork, and continuous learning in the tech field.
         </p>
 
+        <a 
+          href="https://www.credly.com/users/pasidu-chamod" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 mb-10 px-6 py-3 rounded-2xl bg-yellow-400 text-zinc-950 font-bold hover:bg-yellow-300 transition-all shadow-[0_0_20px_rgba(250,204,21,0.3)] reveal-up group"
+        >
+          <span className="material-symbols-rounded">verified</span>
+          View All Digital Badges on Credly
+          <span className="material-symbols-rounded group-hover:translate-x-1 transition-transform">chevron_right</span>
+        </a>
+
         <div className="grid gap-x-6 gap-y-8 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
           {achievements.map(({ imgSrc, title, desc }, key) => (
             <div

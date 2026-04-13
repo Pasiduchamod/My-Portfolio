@@ -6,7 +6,7 @@ const Hero = () => {
     <section id="home" className="pt-28 lg:pt-36">
         <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
             <div className='lg:block'>
-                <figure className="w-full max-w-[480px] mr-auto rounded-full border-[15px] border-yellow-300 shadow-[0px_4px_35px_rgba(255,255,0,0.5)] overflow-hidden">
+                <figure className="w-full max-w-[480px] mr-auto rounded-full border-[15px] border-yellow-300 shadow-[0px_4px_35px_rgba(255,255,0,0.5)] overflow-hidden mb-12 lg:mb-0">
                     <img src='/assets/images/hero-banner-new.png' width={656} height={800} className='w-full'></img>
                 </figure>
             </div>
@@ -22,8 +22,9 @@ const Hero = () => {
                         Currently expanding my skills and knowledge.<br/>Available for opportunities soon!
                     </div>
                 </div>
+
                 <h2 className="headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10">
-                Designing the Future of Web Experiences
+                Architecting the Future of Cloud & DevOps
                 </h2>
                 <div className="flex items-center gap-3">
                 <ButtonPrimary

@@ -11,7 +11,7 @@ const aboutItems = [
   },
   {
     label: 'Current GPA',
-    number: 3.83
+    number: 3.85
   }
 ];
 
@@ -21,7 +21,7 @@ const About = () => {
       <div className="container">
         <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
           <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
-            Hello! I'm Pasidu, a passionate web developer and aspiring DevOps engineer currently pursuing a B.Sc. in Computer Science at the University of Jaffna. I specialize in creating visually engaging and seamlessly functional web applications, combining creativity with technical expertise. I also enjoy collaborating on team projects and participating in hackathons to solve real-world problems.
+            Hello! I'm Pasidu, a passionate web developer and aspiring Cloud & DevOps Engineer currently pursuing a B.Sc. in Computer Science at the University of Jaffna. I specialize in architecting scalable cloud-native solutions and designing automated CI/CD pipelines. I thrive on bridging the gap between development and operations to build highly available and resilient systems.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 md:gap-7">

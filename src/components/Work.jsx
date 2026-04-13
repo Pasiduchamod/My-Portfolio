@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 
 const works = [
@@ -7,6 +7,7 @@ const works = [
     title: "IEEE SLSWYC '26 Official Website",
     tags: ["Full Stack", "GSAP", "Development"],
     links: { live: "https://ieee-slsywc-2026.vercel.app/", repo: "https://github.com/Pasiduchamod/ieee-slsywc-2026.git" },
+    isProduction: true,
   },
   {
     imgSrc: "/assets/images/projects/nexora.png",
@@ -77,28 +78,47 @@ const works = [
 ];
 
 const Work = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const initialItemsCount = 6;
+  const visibleWorks = isExpanded ? works : works.slice(0, initialItemsCount);
+
   return (
     <section className="section" id="work">
       <div className="container">
         <h2 className="headline-2 mb-8 reveal-up">My portfolio highlights</h2>
-        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch]">
+        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] reveal-up">
           Explore a collection of my personal projects showcasing creativity,
           technical expertise, and continuous learning across modern web
           technologies.
         </p>
 
         <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
-          {works.map(({ imgSrc, title, tags, links }, key) => (
+          {visibleWorks.map(({ imgSrc, title, tags, links, isProduction }, key) => (
             <ProjectCard
               key={key}
               imgSrc={imgSrc}
               title={title}
               tags={tags}
               links={links}
-              classes="reveal-up"
+              isProduction={isProduction}
+              classes=""
             />
           ))}
         </div>
+
+        {works.length > initialItemsCount && (
+          <div className="flex justify-center mt-12 reveal-up">
+            <button 
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="btn btn-primary group"
+            >
+              {isExpanded ? 'View Less' : 'View More Works'}
+              <span className={`material-symbols-rounded transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+                grid_view
+              </span>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -20,6 +20,8 @@ import CollaborativeWork from "./components/CollaborativeWork";
 import Writing from "./components/Writing";
 import MobileApps from "./components/MobileApps";
 import AchievementsHighlights from "./components/AchievementsHighlights";
+import Volunteering from "./components/Volunteering";
+import Preloader from "./components/Preloader";
 
 gsap.registerPlugin(useGSAP,ScrollTrigger); 
 
@@ -48,6 +50,7 @@ const App = () =>{
 
     return (
     <ReactLenis root>
+        <Preloader />
         <Header/>
         <main>
             <Hero/>
@@ -59,6 +62,7 @@ const App = () =>{
             <MobileApps/>
             <Writing/>
             <AchievementsHighlights/>
+            <Volunteering/>
             <Contact/>
         </main>
         <Footer/>

@@ -41,6 +41,10 @@ const sitemap = [
     {
       label: 'Medium',
       href: 'https://medium.com/@pasiduchamod'
+    },
+    {
+      label: 'Credly',
+      href: 'https://www.credly.com/users/pasidu-chamod'
     }
   ];
 

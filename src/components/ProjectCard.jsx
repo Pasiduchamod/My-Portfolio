@@ -6,6 +6,7 @@ const ProjectCard = ({
     title,
     tags,
     links, // Changed from projectLink
+    isProduction,
     classes,
     imgClass = 'img-cover'
 }) => {
@@ -15,8 +16,7 @@ const ProjectCard = ({
   const handleCardClick = (e) => {
     const linkKeys = Object.keys(links || {});
     
-    // If only one link, let the default anchor handle it (if it existed) 
-    // or manually redirect if multiple links are not present
+    // If only one link, let the default anchor handle it
     if (linkKeys.length === 1) {
       window.open(links[linkKeys[0]], '_blank');
       return;
@@ -57,8 +57,18 @@ const ProjectCard = ({
         className={"relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors group cursor-pointer " + classes}
         onClick={handleCardClick}
     >
-        <figure className='img-box aspect-square rounded-lg mb-4'>
+        <figure className='img-box aspect-square rounded-lg mb-4 relative overflow-hidden'>
             <img src={imgSrc} loading='lazy' className={imgClass}></img>
+            
+            {isProduction && (
+              <div className="absolute top-3 left-3 z-20 flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-950/60 backdrop-blur-md border border-yellow-400/20 shadow-lg">
+                <div className="relative flex h-2 w-2">
+                  <div className="animate-ping absolute h-full w-full rounded-full bg-yellow-400 opacity-40"></div>
+                  <div className="relative h-2 w-2 rounded-full bg-yellow-400"></div>
+                </div>
+                <span className="text-[10px] font-extrabold text-yellow-400 uppercase tracking-widest">Live Project</span>
+              </div>
+            )}
         </figure>
         <div className='flex items-center justify-between gap-4'>
             <div>
@@ -109,9 +119,9 @@ ProjectCard.propTypes = {
     title:PropTypes.string.isRequired,
     tags:PropTypes.array.isRequired,
     links:PropTypes.object,
+    isProduction:PropTypes.bool,
     classes:PropTypes.string,
     imgClass:PropTypes.string
 }
 
 export default ProjectCard
-

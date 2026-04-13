@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SkillCard from "./SkillCard";
 
 const skillItem = [
@@ -20,7 +20,7 @@ const skillItem = [
   {
     imgSrc: "/assets/images/Tools_icons/react.svg",
     label: "React",
-    desc: "Framework",
+    desc: "Library",
   },
 
   // Backend
@@ -95,28 +95,74 @@ const skillItem = [
     label: "Postman",
     desc: "API Testing",
   },
+  {
+    imgSrc: "/assets/images/Tools_icons/Minikube.png",
+    label: "Minikube",
+    desc: "Local Kubernetes",
+  },
+  {
+    imgSrc: "/assets/images/Tools_icons/azure.png",
+    label: "Azure",
+    desc: "Cloud Services",
+  },
+  {
+    imgSrc: "/assets/images/Tools_icons/gcp.png",
+    label: "GCP",
+    desc: "Cloud Services",
+  },
+  {
+    imgSrc: "/assets/images/Tools_icons/selenium.png",
+    label: "Selenium",
+    desc: "Automation Testing",
+  },
+  {
+    imgSrc: "/assets/images/Tools_icons/laravel.jpg",
+    label: "Laravel",
+    desc: "PHP Framework",
+  },
 ];
 
 const Skill = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  // Define how many items to show initially (e.g., 2 rows of 4 = 8)
+  const initialItemsCount = 8;
+  const visibleSkills = isExpanded ? skillItem : skillItem.slice(0, initialItemsCount);
+
   return (
     <section className="section">
       <div className="container">
         <h2 className="headline-2 reveal-up">Tools I use</h2>
-        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch]">
+        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] reveal-up">
           Discover the powerful tools and technologies I use to create
           exceptional, high-performing websites & applications.
         </p>
+
         <div className="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
-          {skillItem.map(({ imgSrc, label, desc }, key) => (
+          {visibleSkills.map(({ imgSrc, label, desc }, key) => (
             <SkillCard
               key={key}
               imgSrc={imgSrc}
               label={label}
               desc={desc}
-              classes="reveal-up"
+              classes=""
             />
           ))}
         </div>
+
+        {skillItem.length > initialItemsCount && (
+          <div className="flex justify-center mt-10 reveal-up">
+            <button 
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="btn btn-primary group"
+            >
+              {isExpanded ? 'Show Less' : 'Show More'}
+              <span className={`material-symbols-rounded transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+                keyboard_arrow_down
+              </span>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

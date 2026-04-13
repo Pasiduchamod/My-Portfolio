@@ -8,10 +8,11 @@ const Navbar = ({ navOpen }) => {
   const navItems = [
     { label: "Home", link: "#home" },
     { label: "About", link: "#about" },
-    { label: "DevOps", link: "#devops" },
+    { label: "Cloud & DevOps", link: "#devops" },
     { label: "Work", link: "#work" },
     { label: "Apps", link: "#mobile-apps" },
     { label: "Writing", link: "#writing" },
+    { label: "Volunteering", link: "#volunteering" },
     { label: "Contact", link: "#contact" }
   ];
 

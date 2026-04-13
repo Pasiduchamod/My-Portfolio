@@ -1,5 +1,4 @@
-
-import { ButtonOutline } from "./Button";
+import { ButtonOutline, ButtonPrimary } from "./Button";
 
 const Writing = () => {
     return (
@@ -34,12 +33,20 @@ const Writing = () => {
                                 <span className="px-3 py-1 bg-zinc-700/50 rounded-lg text-sm text-zinc-300">Kubernetes</span>
                             </div>
 
-                            <ButtonOutline 
-                                href="https://medium.com/@pasiduchamod/list/devops-from-a-learners-view-25-days-b63e77b6efe7"
-                                target="_blank"
-                                label="Read the Series"
-                                icon="open_in_new"
-                            />
+                            <div className="flex flex-wrap items-center gap-4">
+                                <ButtonOutline 
+                                    href="https://medium.com/@pasiduchamod/list/devops-from-a-learners-view-25-days-b63e77b6efe7"
+                                    target="_blank"
+                                    label="Read the Series"
+                                    icon="open_in_new"
+                                />
+                                <ButtonPrimary 
+                                    href="https://medium.com/@pasiduchamod"
+                                    target="_blank"
+                                    label="Medium Profile"
+                                    icon="arrow_outward"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -20,10 +20,10 @@ const DevOpsProjects = () => {
   return (
     <section className="section" id="devops">
       <div className="container">
-        <h2 className="headline-2 mb-8 reveal-up">Featured DevOps Projects</h2>
+        <h2 className="headline-2 mb-8 reveal-up">Cloud & DevOps Projects</h2>
         <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch]">
-          Specialized in automating workflows and ensuring reliable software delivery. 
-          Here are key projects that demonstrate my expertise in CI/CD, containerization, and cloud deployment.
+          Specialized in architecting cloud-native solutions and automating workflows for high availability. 
+          These projects showcase my expertise in CI/CD, cloud infrastructure, and reliable software delivery.
         </p>
 
         <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">

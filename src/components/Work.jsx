@@ -10,6 +10,19 @@ const works = [
     isProduction: true,
   },
   {
+    imgSrc: "/assets/images/projects/splitmate.png",
+    title: "SplitMate - Smart Boarding Money Manager",
+    tags: ["Full Stack", "Data-base", "Slef-Used", "Development"],
+    links: {repo: "https://github.com/Pasiduchamod/splitmate.git" },
+  },
+  {
+    imgSrc: "/assets/images/projects/qbox-web.png",
+    title: "QBox - Anonymous Q&A Platform",
+    tags: ["Full Stack", "Data-base","Web-design", "Development"],
+    links: { Website: "https://qbox-web.vercel.app/", MobileApp: "https://play.google.com/store/apps/details?id=com.qbox.anonymousqa&pcampaignid=web_share" },
+    isProduction: true,
+  },
+  {
     imgSrc: "/assets/images/projects/nexora.png",
     title: "nexora Real-Time Chat Application",
     tags: ["API", "Data-base", "Development"],

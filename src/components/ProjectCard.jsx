@@ -61,12 +61,11 @@ const ProjectCard = ({
             <img src={imgSrc} loading='lazy' className={imgClass}></img>
             
             {isProduction && (
-              <div className="absolute top-3 left-3 z-20 flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-950/60 backdrop-blur-md border border-yellow-400/20 shadow-lg">
-                <div className="relative flex h-2 w-2">
-                  <div className="animate-ping absolute h-full w-full rounded-full bg-yellow-400 opacity-40"></div>
-                  <div className="relative h-2 w-2 rounded-full bg-yellow-400"></div>
-                </div>
-                <span className="text-[10px] font-extrabold text-yellow-400 uppercase tracking-widest">Live Project</span>
+              <div className="absolute top-3 left-3 z-20 flex items-center gap-2 px-2.5 py-1 rounded-md bg-zinc-950/40 backdrop-blur-md border border-yellow-400/20 shadow-sm">
+                <span className='relative w-1.5 h-1.5 rounded-full bg-yellow-400'>
+                  <span className="absolute inset-0 rounded-full bg-yellow-400 animate-ping"></span>
+                </span>
+                <span className="text-[10px] font-bold text-yellow-400 uppercase tracking-[0.15em]">Production</span>
               </div>
             )}
         </figure>

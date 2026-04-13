@@ -14,6 +14,12 @@ const devOpsWorks = [
     tags: ["Docker", "Kubernetes", "AWS", "Minikube", "Dockerhub"],
     links: { repo: "https://github.com/Pasiduchamod/react-kubernetes-deployment", }, 
   },
+  {
+    imgSrc: "/assets/images/devops_projects/pr_3.png",
+    title: "Automated AWS 3-Tier Infrastructure with CloudFormation",
+    tags: ["AWS", "CloudFormation", "IaC", "3-Tier Architecture"],
+    links: { repo: "https://github.com/Pasiduchamod/Production-Ready-3-Tier-Architecture.git", }, 
+  },
 ];
 
 const DevOpsProjects = () => {

@@ -10,27 +10,38 @@ const Navbar = ({ navOpen }) => {
   const navItems = [
     { label: "Home", link: "#home" },
     { label: "About", link: "#about" },
-    { label: "DevOps", link: "#devops" },
-    { label: "Work", link: "#work" },
-    { label: "Apps", link: "#mobile-apps" },
-    { label: "Writing", link: "#writing" },
-    { label: "Volunteering", link: "#volunteering" },
+    { label: "Work", link: "#devops" },
+    { label: "Impact", link: "#writing" }, // Merged Writing and Volunteering
     { label: "Contact", link: "#contact" }
   ];
 
   useEffect(() => {
-    const sections = navItems.map((item) => document.querySelector(item.link));
+    const trackedSections = [
+      { id: "#home", navId: "#home" },
+      { id: "#about", navId: "#about" },
+      { id: "#devops", navId: "#devops" },
+      { id: "#work", navId: "#devops" },
+      { id: "#mobile-apps", navId: "#devops" },
+      { id: "#writing", navId: "#writing" },
+      { id: "#volunteering", navId: "#writing" },
+      { id: "#contact", navId: "#contact" }
+    ];
+
+    const sections = trackedSections.map((item) => ({
+      el: document.querySelector(item.id),
+      navId: item.navId
+    }));
 
     const handleScroll = () => {
-      let currentSection = "#home";
+      let currentNavId = "#home";
 
       for (let section of sections) {
-        if (section && window.scrollY >= section.offsetTop - 100) {
-          currentSection = `#${section.id}`;
+        if (section.el && window.scrollY >= section.el.offsetTop - 150) {
+          currentNavId = section.navId;
         }
       }
 
-      setActiveSection(currentSection);
+      setActiveSection(currentNavId);
     };
 
     window.addEventListener("scroll", handleScroll);

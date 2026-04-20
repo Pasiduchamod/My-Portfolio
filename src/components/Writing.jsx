@@ -11,10 +11,16 @@ const officialPublications = [
     tags: ["Research", "IEEE", "Academic"],
     links: [
       {
-        label: "Download Article",
+        label: "Download",
         href: "/assets/images/articles/IEEE CIS Newsletter 2026.pdf",
         type: "primary",
         icon: "description"
+      },
+      {
+        label: "View Online",
+        href: "https://csc.jfn.ac.lk/ieee-cisphere/",
+        type: "outline",
+        icon: "open_in_new"
       }
     ]
   }

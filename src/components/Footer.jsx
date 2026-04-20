@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLenis } from 'lenis/react';
 
 import { ButtonPrimary } from './Button';
 
@@ -49,6 +50,8 @@ const sitemap = [
   ];
 
 const Footer = () => {
+  const lenis = useLenis();
+
   return (
     <footer className="section" id='connect'>
         <div className="container">
@@ -64,7 +67,20 @@ const Footer = () => {
                         <p className='mb-2'>Sitemap</p>
                         <ul>
                             {sitemap.map(({label,href},key)=>(
-                                <li key={key}><a href={href} className='block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200'>{label}</a></li>
+                                <li key={key}>
+                                    <a 
+                                        href={href} 
+                                        className='block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200'
+                                        onClick={(e) => {
+                                            if (href.startsWith('#')) {
+                                                e.preventDefault();
+                                                lenis?.scrollTo(href);
+                                            }
+                                        }}
+                                    >
+                                        {label}
+                                    </a>
+                                </li>
                             ))}
                         </ul>
                     </div>

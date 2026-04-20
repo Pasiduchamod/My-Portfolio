@@ -21,6 +21,7 @@ import CollaborativeWork from "./components/CollaborativeWork";
 import Writing from "./components/Writing";
 import MobileApps from "./components/MobileApps";
 import AchievementsHighlights from "./components/AchievementsHighlights";
+import Education from "./components/Education";
 import Volunteering from "./components/Volunteering";
 import Preloader from "./components/Preloader";
 
@@ -56,6 +57,23 @@ const App = () =>{
             })
         });
 
+        const widthElements = gsap.utils.toArray('.reveal-width');
+        widthElements.forEach((element)=>{
+            gsap.fromTo(element, 
+                { scaleX: 0 },
+                {
+                    scaleX: 1,
+                    duration: 1.5,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 90%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        });
+
         // Refresh ScrollTrigger after all content is potentially loaded
         window.addEventListener('load', () => ScrollTrigger.refresh());
     });
@@ -67,6 +85,7 @@ const App = () =>{
         <main>
             <Hero/>
             <About/>
+            <Education/>
             <Skill/>
             <DevOpsProjects/>
             <Work/>

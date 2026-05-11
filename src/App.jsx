@@ -82,13 +82,14 @@ const App = () =>{
             <meta property="og:title" content="Pasidu Chamod - Portfolio | Web Developer & Cloud DevOps Engineer" />
             <meta property="og:description" content="Explore Pasidu Chamod's portfolio: web development, cloud solutions, DevOps projects, and more. Currently pursuing B.Sc. in Computer Science at University of Jaffna." />
             <meta property="og:image" content="/src/assets/images/logo.png" />
-            <meta property="og:url" content="https://yourportfolio.com" />
+            <meta property="og:url" content="https://pasidu-chamod.vercel.app" />
             <meta property="og:type" content="website" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="Pasidu Chamod - Portfolio | Web Developer & Cloud DevOps Engineer" />
             <meta name="twitter:description" content="Explore Pasidu Chamod's portfolio: web development, cloud solutions, DevOps projects, and more." />
             <meta name="twitter:image" content="/src/assets/images/logo.png" />
-            <link rel="canonical" href="https://yourportfolio.com" />
+            <link rel="canonical" href="https://pasidu-chamod.vercel.app" />
+            <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         </Helmet>
         <Preloader />
         <Header/>

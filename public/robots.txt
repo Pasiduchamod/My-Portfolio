@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pasidu-chamod.vercel.app/sitemap.xml

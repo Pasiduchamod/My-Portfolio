@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from 'react-helmet-async';
 import ProjectCard from "./ProjectCard";
 
 const works = [
@@ -97,6 +98,10 @@ const Work = () => {
 
   return (
     <section className="section" id="work">
+      <Helmet>
+        <title>Pasidu Chamod - Portfolio Projects | Full-Stack Web Development</title>
+        <meta name="description" content="Explore Pasidu Chamod's portfolio projects: full-stack web applications, cloud-native solutions, DevOps implementations, and innovative software development." />
+      </Helmet>
       <div className="container">
         <h2 className="headline-2 mb-8 reveal-up">My portfolio highlights</h2>
         <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] reveal-up">

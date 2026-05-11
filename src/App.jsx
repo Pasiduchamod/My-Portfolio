@@ -1,6 +1,8 @@
 
 
 
+import { Helmet } from 'react-helmet-async'
+
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -30,14 +32,6 @@ gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 const App = () =>{
     const lenis = useLenis();
-
-    useEffect(() => {
-        function update(time) {
-          lenis?.raf(time * 1000)
-        }
-        gsap.ticker.add(update)
-        return () => gsap.ticker.remove(update)
-    }, [lenis])
 
     useGSAP(()=>{
         const elements = gsap.utils.toArray('.reveal-up');
@@ -80,6 +74,22 @@ const App = () =>{
 
     return (
     <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true, smoothTouch: true }}>
+        <Helmet>
+            <title>Pasidu Chamod - Portfolio | Web Developer & Cloud DevOps Engineer</title>
+            <meta name="description" content="Pasidu Chamod - Passionate web developer and aspiring Cloud & DevOps Engineer. Explore my portfolio showcasing full-stack development, cloud-native solutions, CI/CD pipelines, and innovative projects." />
+            <meta name="keywords" content="Pasidu Chamod, web developer, Cloud DevOps Engineer, full-stack development, cloud-native solutions, CI/CD pipelines, React, portfolio, Computer Science" />
+            <meta name="author" content="Pasidu Chamod" />
+            <meta property="og:title" content="Pasidu Chamod - Portfolio | Web Developer & Cloud DevOps Engineer" />
+            <meta property="og:description" content="Explore Pasidu Chamod's portfolio: web development, cloud solutions, DevOps projects, and more. Currently pursuing B.Sc. in Computer Science at University of Jaffna." />
+            <meta property="og:image" content="/src/assets/images/logo.png" />
+            <meta property="og:url" content="https://yourportfolio.com" />
+            <meta property="og:type" content="website" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Pasidu Chamod - Portfolio | Web Developer & Cloud DevOps Engineer" />
+            <meta name="twitter:description" content="Explore Pasidu Chamod's portfolio: web development, cloud solutions, DevOps projects, and more." />
+            <meta name="twitter:image" content="/src/assets/images/logo.png" />
+            <link rel="canonical" href="https://yourportfolio.com" />
+        </Helmet>
         <Preloader />
         <Header/>
         <main>

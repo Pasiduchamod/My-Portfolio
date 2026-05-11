@@ -1,9 +1,14 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async';
 import { ButtonOutline, ButtonPrimary } from './Button'
 
 const Hero = () => {
   return (
     <section id="home" className="pt-28 lg:pt-36">
+      <Helmet>
+        <title>Pasidu Chamod - Home | Architecting the Future of Cloud & DevOps</title>
+        <meta name="description" content="Welcome to Pasidu Chamod's portfolio. Architecting scalable cloud-native solutions and automated CI/CD pipelines. Available for opportunities in web development and DevOps." />
+      </Helmet>
         <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
             <div className='lg:block'>
                 <figure className="w-full max-w-[480px] mr-auto rounded-full border-[15px] border-yellow-300 shadow-[0px_4px_35px_rgba(255,255,0,0.5)] overflow-hidden mb-12 lg:mb-0">

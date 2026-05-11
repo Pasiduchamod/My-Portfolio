@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const aboutItems = [
   {
@@ -18,7 +19,12 @@ const aboutItems = [
 const About = () => {
   return (
     <section id='about' className='section'>
+      <Helmet>
+        <title>Pasidu Chamod - About | Web Developer & Cloud DevOps Engineer</title>
+        <meta name="description" content="Learn about Pasidu Chamod: passionate web developer and aspiring Cloud & DevOps Engineer. B.Sc. in Computer Science student specializing in scalable cloud solutions and CI/CD pipelines." />
+      </Helmet>
       <div className="container">
+        <h2 className="headline-2 mb-8 reveal-up">About Me</h2>
         <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
           <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
             Hello! I'm Pasidu, a passionate web developer and aspiring Cloud & DevOps Engineer currently pursuing a B.Sc. in Computer Science at the University of Jaffna. I specialize in architecting scalable cloud-native solutions and designing automated CI/CD pipelines. I thrive on bridging the gap between development and operations to build highly available and resilient systems.
@@ -41,7 +47,7 @@ const About = () => {
               src='/assets/images/logo.png'
               width={30}
               className='ml-auto md:w-[40px] md:h-[40px]'
-              alt="logo"
+              alt="Pasidu Chamod's portfolio logo"
             />
           </div>
         </div>

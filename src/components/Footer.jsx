@@ -46,6 +46,10 @@ const sitemap = [
     {
       label: 'Credly',
       href: 'https://www.credly.com/users/pasidu-chamod'
+    },
+    {
+      label: 'YouTube',
+      href: 'https://youtube.com/@pasidu_chamod?si=-_qvzeBnF_6NJ9hh'
     }
   ];
 

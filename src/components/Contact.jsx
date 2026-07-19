@@ -29,6 +29,13 @@ const socialLinks = [
       </svg>,
       alt: 'Instagram'
     },
+    {
+      href: 'https://youtube.com/@pasidu_chamod?si=-_qvzeBnF_6NJ9hh',
+      icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21.543 6.498C22 8.21 22 12 22 12s0 3.79-.457 5.502c-.254.949-.997 1.693-1.948 1.948C17.88 20 12 20 12 20s-5.88 0-7.595-.45c-.951-.255-1.694-.999-1.948-1.948C2 15.79 2 12 2 12s0-3.79.457-5.502c.254-.949.997-1.693 1.948-1.948C6.12 4 12 4 12 4s5.88 0 7.595.45c.951.255 1.694.999 1.948 1.948zM9.545 15.568L15 12 9.545 8.432v7.136z" fill="currentColor" />
+      </svg>,
+      alt: 'YouTube'
+    },
   ];
 
 const Contact = () => {

@@ -29,6 +29,21 @@ const officialPublications = [
 const blogSeries = [
   {
     type: "Digital Series",
+    title: "The AWS Blueprint",
+    imgSrc: "/assets/images/blog/aws_blueprint.jpg",
+    desc: "A comprehensive, step-by-step learning series designed to demystify AWS cloud computing. Covers core compute, storage, databases, networking, security, and AI/ML services.",
+    tags: ["AWS", "Cloud", "Architecture", "Learning"],
+    links: [
+      {
+        label: "Read Series",
+        href: "https://medium.com/@pasiduchamod/list/the-aws-blueprint-dea4b89e005b",
+        type: "outline",
+        icon: "open_in_new"
+      }
+    ]
+  },
+  {
+    type: "Digital Series",
     title: "DevOps from a Learner's View",
     imgSrc: "/assets/images/blog/devops_series.jpg",
     desc: "A comprehensive journey documenting my path to mastering DevOps practices. From Linux fundamentals to CI/CD pipelines with Jenkins and Kubernetes.",

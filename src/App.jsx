@@ -26,6 +26,7 @@ import AchievementsHighlights from "./components/AchievementsHighlights";
 import Education from "./components/Education";
 import Volunteering from "./components/Volunteering";
 import Preloader from "./components/Preloader";
+import FunFacts from "./components/FunFacts";
 
 gsap.registerPlugin(useGSAP,ScrollTrigger); 
 
@@ -62,6 +63,23 @@ const App = () =>{
                     scrollTrigger: {
                         trigger: element,
                         start: 'top 90%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        });
+
+        const heightElements = gsap.utils.toArray('.reveal-height');
+        heightElements.forEach((element)=>{
+            gsap.fromTo(element, 
+                { scaleY: 0 },
+                {
+                    scaleY: 1,
+                    duration: 1.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 85%',
                         toggleActions: 'play none none reverse'
                     }
                 }
@@ -105,6 +123,7 @@ const App = () =>{
             <Writing/>
             <AchievementsHighlights/>
             <Volunteering/>
+            <FunFacts/>
             <Contact/>
         </main>
         <Footer/>

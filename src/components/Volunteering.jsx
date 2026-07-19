@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
@@ -6,56 +6,82 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const volunteeringExperiences = [
-  {
-    role: "IEEE Member",
-    organization: "IEEE",
-    duration: "2025 - Present",
-    desc: "Active member contributing to technical and community activities, fostering growth in the tech ecosystem.",
-    imgSrc: "/assets/images/volunteering/ieee.png"
-  },
+  // Positions (Long-term / ongoing)
   {
     role: "Technical Lead",
     organization: "AWS CloudClubs - University of Jaffna",
     duration: "Jan 2026 - Present",
     desc: "Leading technical initiatives and fostering cloud learning within the student community through workshops.",
-    imgSrc: "/assets/images/volunteering/aws_cloud_club_university_of_jaffna_logo.jpg"
+    imgSrc: "/assets/images/volunteering/aws_cloud_club_university_of_jaffna_logo.jpg",
+    type: "positions"
   },
   {
     role: "Webmaster",
     organization: "Member Activities - IEEE Sri Lanka Section",
     duration: "Feb 2026 - Present",
     desc: "Managing and maintaining web platforms for IEEE member activities, ensuring seamless digital communication.",
-    imgSrc: "/assets/images/volunteering/IEEE_sri_lanka_section.jpg"
-  },
-  {
-    role: "Student Engagement Lead",
-    organization: "AWS Community Day 2026",
-    duration: "March 2026",
-    desc: "Coordinated student outreach and engagement for the national community day event.",
-    imgSrc: "/assets/images/volunteering/aws_cloud_club_community_day.png"
+    imgSrc: "/assets/images/volunteering/IEEE_sri_lanka_section.jpg",
+    type: "positions"
   },
   {
     role: "Member",
     organization: "CSSL GenzChapter",
     duration: "March 2026 - Present",
     desc: "Active member of the Computer Society of Sri Lanka's youth chapter.",
-    imgSrc: "/assets/images/volunteering/CSSL_UOJ.jpg"
+    imgSrc: "/assets/images/volunteering/CSSL_UOJ.jpg",
+    type: "positions"
+  },
+  {
+    role: "IEEE Member",
+    organization: "IEEE",
+    duration: "2025 - Present",
+    desc: "Active member contributing to technical and community activities, fostering growth in the tech ecosystem.",
+    imgSrc: "/assets/images/volunteering/ieee.png",
+    type: "positions"
+  },
+  
+  // Events (Short-term / campaigns)
+  {
+    role: "Student Engagement Lead",
+    organization: "AWS Community Day 2026",
+    duration: "March 2026",
+    desc: "Coordinated student outreach and engagement for the national community day event.",
+    imgSrc: "/assets/images/volunteering/aws_cloud_club_community_day.png",
+    type: "events"
   },
   {
     role: "IEEE Xtreme Ambassador",
     organization: "University of Jaffna (UOJ)",
     duration: "2026",
     desc: "Representing and promoting the IEEE Xtreme programming competition at UOJ.",
-    imgSrc: "/assets/images/volunteering/ieee_xtream.png"
+    imgSrc: "/assets/images/volunteering/ieee_xtream.png",
+    type: "events"
+  },
+  {
+    role: "Program Team Member",
+    organization: "Yarl Insight",
+    duration: "2026",
+    desc: "Contributed as a program team member for Yarl Insight, supporting event organization, participant coordination, and workshop logistics.",
+    imgSrc: "/assets/images/volunteering/yarl_insight.jpeg",
+    type: "events"
   }
 ];
 
 const Volunteering = () => {
+  const [activeTab, setActiveTab] = useState('positions'); // 'positions' or 'events'
   const containerRef = useRef(null);
   const lineRef = useRef(null);
   const itemsRef = useRef([]);
 
+  // Reset refs on each render so we don't have stale/null elements when tabs switch
+  itemsRef.current = [];
+
+  const filteredExperiences = volunteeringExperiences.filter(exp => exp.type === activeTab);
+
   useGSAP(() => {
+    // Reset line scale
+    gsap.set(lineRef.current, { scaleY: 0 });
+
     // Animate the timeline line
     gsap.to(lineRef.current, {
       scrollTrigger: {
@@ -70,13 +96,12 @@ const Volunteering = () => {
 
     // Animate each card with advanced effects
     itemsRef.current.forEach((item, index) => {
+      if (!item) return;
       const isEven = index % 2 === 0;
       
       gsap.fromTo(item, 
         {
           opacity: 0,
-          // If key % 2 === 0, it is flex-row-reverse, so content is on the LEFT side of the line.
-          // So if index is even, it should slide from the LEFT (-100).
           x: isEven ? -100 : 100,
           scale: 0.8,
           rotate: isEven ? -5 : 5
@@ -97,15 +122,48 @@ const Volunteering = () => {
         }
       );
     });
-  }, { scope: containerRef });
+
+    // Refresh ScrollTrigger to update layouts
+    ScrollTrigger.refresh();
+  }, { dependencies: [activeTab], scope: containerRef });
 
   return (
     <section className="section" id="volunteering">
       <div className="container" ref={containerRef}>
         <h2 className="headline-2 mb-3 reveal-up">Volunteering Experience</h2>
-        <p className="text-zinc-400 mt-3 mb-16 max-w-[50ch] reveal-up">
+        <p className="text-zinc-400 mt-3 mb-12 max-w-[50ch] reveal-up">
           Building community and leadership through technical contributions and student engagement.
         </p>
+
+        {/* Category Switcher Tabs */}
+        <div className="flex justify-center mb-16 reveal-up">
+          <div className="relative flex p-1 bg-zinc-800/40 backdrop-blur-md rounded-full border border-zinc-700/30">
+            {/* Sliding background indicator */}
+            <div 
+              className="absolute top-1 bottom-1 left-1 rounded-full bg-yellow-400 transition-all duration-300 ease-out shadow-lg"
+              style={{
+                width: 'calc(50% - 4px)',
+                transform: `translateX(${activeTab === 'positions' ? '0' : '100%'})`
+              }}
+            />
+            <button
+              onClick={() => setActiveTab('positions')}
+              className={`relative z-10 px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-full transition-colors duration-300 whitespace-nowrap ${
+                activeTab === 'positions' ? 'text-zinc-950' : 'text-zinc-400 hover:text-zinc-100'
+              }`}
+            >
+              Long-term Roles
+            </button>
+            <button
+              onClick={() => setActiveTab('events')}
+              className={`relative z-10 px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-full transition-colors duration-300 whitespace-nowrap ${
+                activeTab === 'events' ? 'text-zinc-950' : 'text-zinc-400 hover:text-zinc-100'
+              }`}
+            >
+              Events & Initiatives
+            </button>
+          </div>
+        </div>
 
         <div className="relative mt-8">
           {/* Vertical Line Background */}
@@ -119,14 +177,14 @@ const Volunteering = () => {
 
           {/* Start and End Decorative Dots */}
           <div className="absolute left-4 md:left-1/2 top-0 w-3 h-3 bg-yellow-400 rounded-full -translate-x-1/2 -translate-y-1/2 z-10 shadow-[0_0_10px_rgba(250,204,21,0.8)]"></div>
-          <div className="absolute left-4 md:left-1/2 bottom-0 w-3 h-3 bg-zinc-700 rounded-full -translate-x-1/2 translate-y-1/2 z-10 group-hover:bg-yellow-400 transition-colors duration-500 shadow-[0_0_10px_rgba(250,204,21,0.4)]"></div>
+          <div className="absolute left-4 md:left-1/2 bottom-0 w-3 h-3 bg-zinc-700 rounded-full -translate-x-1/2 translate-y-1/2 z-10 shadow-[0_0_10px_rgba(250,204,21,0.4)]"></div>
 
           <div className="space-y-28">
-            {volunteeringExperiences.map(({ role, organization, duration, desc, imgSrc }, key) => (
+            {filteredExperiences.map(({ role, organization, duration, desc, imgSrc }, key) => (
               <div 
-                key={key} 
+                key={`${activeTab}-${key}`} 
                 className={`relative flex items-center w-full group/timeline ${key % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
-                ref={el => itemsRef.current[key] = el}
+                ref={el => { if (el) itemsRef.current.push(el); }}
               >
                 {/* Timeline Dot with smooth hover effect */}
                 <div className="absolute left-4 md:left-1/2 w-6 h-6 rounded-full -translate-x-1/2 z-20 flex items-center justify-center transition-all duration-500">

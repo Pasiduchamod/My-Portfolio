@@ -3,22 +3,28 @@ import ProjectCard from "./ProjectCard";
 
 const devOpsWorks = [
   {
+    imgSrc: "/assets/images/devops_projects/pr_4.jpg",
+    title: "AWS Infrastructure Automation via Terraform & GitLab CI/CD",
+    tags: ["Terraform", "GitLab CI/CD", "AWS", "IaC", "DynamoDB", "S3"],
+    links: { repo: "https://github.com/Pasiduchamod" },
+  },
+  {
     imgSrc: "/assets/images/devops_projects/pr_1.png",
     title: "End-to-End Jenkins CI/CD Pipeline",
     tags: ["Jenkins", "Docker", "SonarQube", "AWS", "GitHub"],
-    links: { repo: "https://github.com/Pasiduchamod/Jenkins-CI-CD-Pipeline---SonarQube-Docker-Github-Webhooks-on-AWS", }, 
+    links: { repo: "https://github.com/Pasiduchamod/Jenkins-CI-CD-Pipeline---SonarQube-Docker-Github-Webhooks-on-AWS" }, 
   },
   {
     imgSrc: "/assets/images/devops_projects/pr_2.png",
     title: "Deploying a React App on Kubernetes using Minikube and Docker",
     tags: ["Docker", "Kubernetes", "AWS", "Minikube", "Dockerhub"],
-    links: { repo: "https://github.com/Pasiduchamod/react-kubernetes-deployment", }, 
+    links: { repo: "https://github.com/Pasiduchamod/react-kubernetes-deployment" }, 
   },
   {
     imgSrc: "/assets/images/devops_projects/pr_3.png",
     title: "Automated AWS 3-Tier Infrastructure with CloudFormation",
     tags: ["AWS", "CloudFormation", "IaC", "3-Tier Architecture"],
-    links: { repo: "https://github.com/Pasiduchamod/Production-Ready-3-Tier-Architecture.git", }, 
+    links: { repo: "https://github.com/Pasiduchamod/Production-Ready-3-Tier-Architecture.git" }, 
   },
 ];
 

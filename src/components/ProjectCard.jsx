@@ -123,4 +123,4 @@ ProjectCard.propTypes = {
     imgClass:PropTypes.string
 }
 
-export default ProjectCard
+export default ProjectCard;

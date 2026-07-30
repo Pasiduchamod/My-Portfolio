@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const achievements = [
   {
@@ -32,13 +33,22 @@ const AchievementsHighlights = () => {
         </p>
 
         <div className="flex flex-wrap gap-4 mb-10 reveal-up">
+          <Link 
+            to="/gallery" 
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-yellow-400 text-zinc-950 font-bold hover:bg-yellow-300 transition-all shadow-[0_0_20px_rgba(250,204,21,0.3)] group"
+          >
+            <span className="material-symbols-rounded">collections</span>
+            View Event & Hackathon Photo Gallery
+            <span className="material-symbols-rounded group-hover:translate-x-1 transition-transform">chevron_right</span>
+          </Link>
+
           <a 
             href="https://www.credly.com/users/pasidu-chamod" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-yellow-400 text-zinc-950 font-bold hover:bg-yellow-300 transition-all shadow-[0_0_20px_rgba(250,204,21,0.3)] group"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-zinc-800/40 hover:bg-zinc-800/80 border border-zinc-700/50 text-zinc-100 font-bold transition-all shadow-[0_0_20px_rgba(0,0,0,0.15)] group"
           >
-            <span className="material-symbols-rounded">verified</span>
+            <span className="material-symbols-rounded text-yellow-400">verified</span>
             View All Badges on Credly
             <span className="material-symbols-rounded group-hover:translate-x-1 transition-transform">chevron_right</span>
           </a>

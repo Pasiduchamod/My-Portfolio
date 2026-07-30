@@ -1,21 +1,27 @@
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useLenis } from "lenis/react";
+import { useLocation } from "react-router-dom";
 
 const Navbar = ({ navOpen }) => {
   const lenis = useLenis();
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState("#home");
   const activeBox = useRef(null);
+
+  const isMainPage = location.pathname === "/";
 
   const navItems = [
     { label: "Home", link: "#home" },
     { label: "About", link: "#about" },
     { label: "Work", link: "#devops" },
-    { label: "Impact", link: "#writing" }, // Merged Writing and Volunteering
+    { label: "Impact", link: "#writing" },
     { label: "Contact", link: "#contact" }
   ];
 
   useEffect(() => {
+    if (!isMainPage) return;
+
     const trackedSections = [
       { id: "#home", navId: "#home" },
       { id: "#about", navId: "#about" },
@@ -46,7 +52,7 @@ const Navbar = ({ navOpen }) => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMainPage]);
 
   useEffect(() => {
     const activeLink = document.querySelector(`.nav-link[href="${activeSection}"]`);
@@ -56,18 +62,20 @@ const Navbar = ({ navOpen }) => {
       activeBox.current.style.width = `${activeLink.offsetWidth}px`;
       activeBox.current.style.height = `${activeLink.offsetHeight}px`;
     }
-  }, [activeSection]);
+  }, [activeSection, location.pathname]);
 
   return (
     <nav className={"navbar " + (navOpen ? "active" : "")}>
       {navItems.map(({ label, link }) => (
         <a
-          href={link}
+          href={isMainPage ? link : `/${link}`}
           key={link}
           className={`nav-link ${activeSection === link ? "active" : ""}`}
           onClick={(e) => {
-            e.preventDefault();
-            lenis?.scrollTo(link);
+            if (isMainPage) {
+              e.preventDefault();
+              lenis?.scrollTo(link);
+            }
           }}
         >
           {label}

@@ -7,12 +7,24 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+
+# Build & Dist output
 dist
 dist-ssr
-*.local
 
-# Editor directories and files
+# Environment & secret files
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Firebase
+.firebase/
+
+# Editor & OS files
 .vscode/*
 !.vscode/extensions.json
 .idea

@@ -1,28 +1,29 @@
 import React from 'react'
 import { useLenis } from 'lenis/react';
+import { useLocation } from 'react-router-dom';
 
 import { ButtonPrimary } from './Button';
 
 const sitemap = [
     {
       label: 'Home',
-      href: '#home'
+      href: '/#home'
     },
     {
       label: 'About',
-      href: '#about'
+      href: '/#about'
     },
     {
       label: 'Work',
-      href: '#work'
+      href: '/#devops'
     },
     {
       label: 'Contact me',
-      href: '#contact'
+      href: '/#contact'
     }
-  ];
+];
   
-  const socials = [
+const socials = [
     {
       label: 'GitHub',
       href: 'https://github.com/Pasiduchamod'
@@ -51,10 +52,12 @@ const sitemap = [
       label: 'YouTube',
       href: 'https://youtube.com/@pasidu_chamod?si=-_qvzeBnF_6NJ9hh'
     }
-  ];
+];
 
 const Footer = () => {
   const lenis = useLenis();
+  const location = useLocation();
+  const isMainPage = location.pathname === '/';
 
   return (
     <footer className="section" id='connect'>
@@ -68,7 +71,7 @@ const Footer = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4 lg:pl-20 reveal-up">
                     <div>
-                        <p className='mb-2'>Sitemap</p>
+                        <p className='mb-2 font-medium text-zinc-200'>Sitemap</p>
                         <ul>
                             {sitemap.map(({label,href},key)=>(
                                 <li key={key}>
@@ -76,9 +79,10 @@ const Footer = () => {
                                         href={href} 
                                         className='block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200'
                                         onClick={(e) => {
-                                            if (href.startsWith('#')) {
+                                            if (isMainPage && href.includes('#')) {
                                                 e.preventDefault();
-                                                lenis?.scrollTo(href);
+                                                const target = href.substring(href.indexOf('#'));
+                                                lenis?.scrollTo(target);
                                             }
                                         }}
                                     >
@@ -89,20 +93,20 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <p className='mb-2'>Socials</p>
+                        <p className='mb-2 font-medium text-zinc-200'>Socials</p>
                         <ul>
                             {socials.map(({label,href},key)=>(
-                                <li key={key}><a href={href} target='_blank' className='block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200'>{label}</a></li>
+                                <li key={key}><a href={href} target='_blank' rel="noopener noreferrer" className='block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200'>{label}</a></li>
                             ))}
                         </ul>
                     </div>
                 </div>
             </div>
-            <div className="flex items-center justify-between pt-10 mb-8 reveal-up">
+            <div className="flex items-center justify-between pt-10 mb-8 reveal-up border-t border-zinc-800/80 mt-10">
                 <a href='/' className='logo'>
-                    <img src='/assets/images/logo.png' width={40} height={40}/>
+                    <img src='/assets/images/logo.png' width={40} height={40} alt="Logo"/>
                 </a>
-                <p className="text-zinc-500 text-sm">&copy; {new Date().getFullYear()}<span className='text-zinc-200'> PC Solutions</span></p>
+                <p className="text-zinc-500 text-sm">&copy; {new Date().getFullYear()} <span className='text-zinc-200'>PC Solutions</span></p>
             </div>
         </div>
     </footer>

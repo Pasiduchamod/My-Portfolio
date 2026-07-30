@@ -26,9 +26,7 @@ import EventGallery from "./components/EventGallery";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const MainPortfolio = () => {
-  const lenis = useLenis();
-
+const useGSAPAnimations = () => {
   useGSAP(() => {
     const elements = gsap.utils.toArray('.reveal-up');
     elements.forEach((element) => {
@@ -81,7 +79,12 @@ const MainPortfolio = () => {
     });
 
     window.addEventListener('load', () => ScrollTrigger.refresh());
+    setTimeout(() => ScrollTrigger.refresh(), 300);
   });
+};
+
+const MainPortfolio = () => {
+  useGSAPAnimations();
 
   return (
     <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true, smoothTouch: true }}>
@@ -114,21 +117,28 @@ const MainPortfolio = () => {
   );
 };
 
+const GalleryPage = () => {
+  useGSAPAnimations();
+
+  return (
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true, smoothTouch: true }}>
+      <Helmet>
+        <title>Event & Hackathon Gallery | Pasidu Chamod</title>
+        <meta name="description" content="Chronological photo gallery of hackathons, cloud workshops, industrial visits, and developer community events." />
+      </Helmet>
+      <Header />
+      <EventGallery />
+      <Footer />
+    </ReactLenis>
+  );
+};
+
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPortfolio />} />
-        <Route 
-          path="/gallery" 
-          element={
-            <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true, smoothTouch: true }}>
-              <Header />
-              <EventGallery />
-              <Footer />
-            </ReactLenis>
-          } 
-        />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
     </BrowserRouter>
   );

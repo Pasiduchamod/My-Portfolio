@@ -1,33 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { fetchGalleryAlbums } from '../lib/cloudinary';
+import React, { useState } from 'react';
+import { galleryAlbums } from '../data/galleryData';
 import GalleryModal from './GalleryModal';
 
 const EventGallery = () => {
-  const [albums, setAlbums] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeModalAlbum, setActiveModalAlbum] = useState(null);
 
   const categories = ['All', 'Hackathons', 'Organized Events', 'Awards', 'Workshops & Talks'];
 
-  const loadAlbums = async () => {
-    setLoading(true);
-    try {
-      const data = await fetchGalleryAlbums();
-      setAlbums(data);
-    } catch (err) {
-      console.error('Failed to load gallery albums:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    loadAlbums();
-  }, []);
-
-  const filteredAlbums = albums.filter((album) => {
+  const filteredAlbums = galleryAlbums.filter((album) => {
     const matchesCategory = selectedCategory === 'All' || album.category?.toLowerCase() === selectedCategory.toLowerCase();
     const matchesSearch = 
       album.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -56,15 +38,6 @@ const EventGallery = () => {
               Explore photo albums from national hackathons I participated in, developer workshops I organized, and key tech achievements.
             </p>
           </div>
-
-          <button
-            onClick={loadAlbums}
-            className="btn btn-outline self-start md:self-auto"
-            title="Refresh Gallery"
-          >
-            <span className="material-symbols-rounded">refresh</span>
-            Refresh
-          </button>
         </div>
 
         {/* Category Filters & Search */}
@@ -103,18 +76,12 @@ const EventGallery = () => {
         </div>
 
         {/* Gallery Albums Grid */}
-        {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((idx) => (
-              <div key={idx} className="h-80 rounded-2xl bg-zinc-800/40 animate-pulse" />
-            ))}
-          </div>
-        ) : filteredAlbums.length === 0 ? (
+        {filteredAlbums.length === 0 ? (
           <div className="text-center py-20 bg-zinc-800/30 rounded-3xl border border-zinc-800/80 my-8">
             <span className="material-symbols-rounded text-5xl text-zinc-600 mb-2">collections</span>
             <h3 className="text-lg font-medium text-zinc-300">No albums found</h3>
             <p className="text-sm text-zinc-500 mt-1 max-w-md mx-auto">
-              {searchQuery ? `No matches for "${searchQuery}".` : 'No event albums uploaded in this category yet.'}
+              {searchQuery ? `No matches for "${searchQuery}".` : 'No event albums added in this category yet.'}
             </p>
           </div>
         ) : (

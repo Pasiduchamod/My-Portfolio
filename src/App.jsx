@@ -23,7 +23,6 @@ import Volunteering from "./components/Volunteering";
 import Preloader from "./components/Preloader";
 import FunFacts from "./components/FunFacts";
 import EventGallery from "./components/EventGallery";
-import AdminPortal from "./components/Admin/AdminPortal";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -130,7 +129,6 @@ const App = () => {
             </ReactLenis>
           } 
         />
-        <Route path="/admin" element={<AdminPortal />} />
       </Routes>
     </BrowserRouter>
   );

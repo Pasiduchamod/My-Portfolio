@@ -1,0 +1,180 @@
+{
+  "personal": {
+    "name": "Pasidu Chamod",
+    "title": "Web Developer & Aspiring DevOps Engineer",
+    "summary": "Passionate web developer and aspiring DevOps engineer currently pursuing a B.Sc. in Computer Science at the University of Jaffna. Specializes in creating visually engaging and seamlessly functional web applications, combining creativity with technical expertise. Enjoys collaborating on team projects and participating in hackathons to solve real-world problems.",
+    "availability": "Currently expanding skills and knowledge. Available for opportunities soon."
+  },
+  "education": [
+    {
+      "degree": "B.Sc. in Computer Science",
+      "institution": "University of Jaffna",
+      "gpa": 3.83,
+      "status": "In Progress"
+    }
+  ],
+  "stats": {
+    "projectsCompleted": "20+",
+    "yearsOfExperience": "3+"
+  },
+  "social": {
+    "github": "https://github.com/Pasiduchamod",
+    "linkedin": "https://www.linkedin.com/in/pasidu-chamod",
+    "twitter": "https://x.com/Pasidu_chamod",
+    "instagram": "https://www.instagram.com/pasidu_chamod/",
+    "medium": "https://medium.com/@pasiduchamod"
+  },
+  "cv": "/assets/images/CV/Resume.pdf",
+  "skills": {
+    "frontend": ["CSS", "TailwindCSS", "JavaScript", "React"],
+    "backend": ["NodeJS", "ExpressJS", "Firebase"],
+    "database": ["MongoDB", "MySQL"],
+    "devops_cloud": ["Docker", "AWS", "Jenkins", "Kubernetes", "Terraform", "SonarQube", "Salesforce"],
+    "tools": ["Postman", "Git", "GitHub"]
+  },
+  "projects": {
+    "solo": [
+      {
+        "title": "IEEE SLSYWC '26 Official Website",
+        "tags": ["Full Stack", "GSAP", "Development"],
+        "live": "https://ieee-slsywc-2026.vercel.app/",
+        "repo": "https://github.com/Pasiduchamod/ieee-slsywc-2026.git"
+      },
+      {
+        "title": "nexora Real-Time Chat Application",
+        "tags": ["API", "Database", "Development"],
+        "live": "https://nexora-plum.vercel.app/",
+        "repo": "https://github.com/Pasiduchamod/nexora-chat-app.git"
+      },
+      {
+        "title": "Anupama Collections (E-Commerce)",
+        "tags": ["API", "Web-design", "Development", "MERN"],
+        "live": "https://anupama-frontend.vercel.app/",
+        "repo": "https://github.com/Pasiduchamod/Anupama_Full_Stack.git"
+      },
+      {
+        "title": "ZaaraAI (AI Chatbot)",
+        "tags": ["API", "Web-design", "Development"],
+        "live": "https://zaaraai.web.app/",
+        "repo": "https://github.com/Pasiduchamod/Chat-bot.git"
+      },
+      {
+        "title": "EverCare - Doctor Booking App",
+        "tags": ["API", "Web-design", "Development", "MERN"],
+        "repo": "https://github.com/Pasiduchamod/EverCare-Health.git"
+      },
+      {
+        "title": "University Website",
+        "tags": ["Web-design", "Development"],
+        "live": "https://pasiduchamod.github.io/University-web-site/",
+        "repo": "https://github.com/Pasiduchamod/University-web-site.git"
+      },
+      {
+        "title": "Random Password Generator",
+        "tags": ["Development"],
+        "live": "https://pasiduchamod.github.io/Random-Password/",
+        "repo": "https://github.com/Pasiduchamod/Random-Password.git"
+      },
+      {
+        "title": "To-Do List App",
+        "tags": ["Development"],
+        "live": "https://pasiduchamod.github.io/to-do-app/",
+        "repo": "https://github.com/Pasiduchamod/to-do-app.git"
+      },
+      {
+        "title": "Weather App",
+        "tags": ["API", "Development"],
+        "live": "https://pasiduchamod.github.io/weather-app/",
+        "repo": "https://github.com/Pasiduchamod/weather-app.git"
+      },
+      {
+        "title": "Age Calculator",
+        "tags": ["Development"],
+        "live": "https://pasiduchamod.github.io/Age-Calculator/",
+        "repo": "https://github.com/Pasiduchamod/Age-Calculator.git"
+      },
+      {
+        "title": "QR Code Generator",
+        "tags": ["Development"],
+        "live": "https://pasiduchamod.github.io/QR-Generator/",
+        "repo": "https://github.com/Pasiduchamod/QR-Generator.git"
+      },
+      {
+        "title": "Quiz App",
+        "tags": ["Development"],
+        "live": "https://pasiduchamod.github.io/Quiz-App/",
+        "repo": "https://github.com/Pasiduchamod/Quiz-App.git"
+      }
+    ],
+    "devops": [
+      {
+        "title": "End-to-End Jenkins CI/CD Pipeline",
+        "tags": ["Jenkins", "Docker", "SonarQube", "AWS", "GitHub"],
+        "description": "Full CI/CD pipeline using Jenkins with SonarQube for code quality, Docker for containerization, and deployed on AWS with GitHub Webhooks.",
+        "repo": "https://github.com/Pasiduchamod/Jenkins-CI-CD-Pipeline---SonarQube-Docker-Github-Webhooks-on-AWS"
+      },
+      {
+        "title": "Deploying a React App on Kubernetes using Minikube and Docker",
+        "tags": ["Docker", "Kubernetes", "AWS", "Minikube", "Dockerhub"],
+        "description": "Container orchestration project deploying a React application using Kubernetes with Minikube on AWS.",
+        "repo": "https://github.com/Pasiduchamod/react-kubernetes-deployment"
+      }
+    ],
+    "mobile": [
+      {
+        "title": "QBox - Teamwork & Communication",
+        "tags": ["Mobile App", "Education", "Real-time"],
+        "playstore": "https://play.google.com/store/apps/details?id=com.qbox.anonymousqa&pcampaignid=web_share",
+        "website": "https://qbox-web.vercel.app/",
+        "demo": "https://youtu.be/dyw-YJM8ziA"
+      },
+      {
+        "title": "CompareShop - Find Best Value",
+        "tags": ["Mobile App", "Shopping", "Utility"],
+        "playstore": "https://play.google.com/store/apps/details?id=lk.pasiduchamod.compareshop&pcampaignid=web_share",
+        "demo": "https://youtu.be/d-zdgkrjXpU"
+      }
+    ],
+    "collaborative": [
+      {
+        "title": "Creators-Space E-Learning Management System",
+        "tags": ["Team Project", "Open Source"],
+        "repo": "https://github.com/PamudaUposath/Creators-Space-GroupProject"
+      },
+      {
+        "title": "UniConnect - AgentForce Chatbot System",
+        "tags": ["Hackathon", "AI", "Salesforce", "Team Project"],
+        "live": "https://universityofjaffna4-dev-ed.develop.my.site.com/s/?language=en_US"
+      },
+      {
+        "title": "Blood Donation Tracking System",
+        "tags": ["Hackathon", "Ballerina", "Team Project"],
+        "repo": "https://github.com/PamudaUposath/iwb25-296-genalphaz"
+      },
+      {
+        "title": "LankaSafe - Emergency Alert System",
+        "tags": ["Hackathon", "Team Project"],
+        "repo": "https://github.com/Pasiduchamod/APIIT-HACK"
+      }
+    ]
+  },
+  "achievements": [
+    {
+      "title": "HackForce Winner",
+      "description": "Secured first place at the HackForce hackathon by developing UniConnect — an academic management system powered by AgentForce on Salesforce."
+    },
+    {
+      "title": "Google Arcade Legend Tier",
+      "description": "Achieved the Legend Tier in Google Arcade by mastering advanced Google Cloud and development challenges that tested real-world problem-solving skills."
+    }
+  ],
+  "writing": [
+    {
+      "title": "DevOps from a Learner's View",
+      "description": "A comprehensive 25-day journey documenting the path to mastering DevOps practices. From Linux fundamentals to CI/CD pipelines with Jenkins and Kubernetes. Breaks down complex concepts into digestible, hands-on learning experiences.",
+      "topics": ["DevOps", "Linux", "Jenkins", "Docker", "Kubernetes"],
+      "url": "https://medium.com/@pasiduchamod/list/devops-from-a-learners-view-25-days-b63e77b6efe7",
+      "platform": "Medium"
+    }
+  ]
+}

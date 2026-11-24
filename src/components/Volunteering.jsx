@@ -42,27 +42,35 @@ const volunteeringExperiences = [
   
   // Events (Short-term / campaigns)
   {
-    role: "Student Engagement Lead",
-    organization: "AWS Community Day 2026",
-    duration: "March 2026",
-    desc: "Coordinated student outreach and engagement for the national community day event.",
-    imgSrc: "/assets/images/volunteering/aws_cloud_club_community_day.png",
-    type: "events"
-  },
-  {
-    role: "IEEE Xtreme Ambassador",
+    role: "IEEE Xtreme 20.0 Ambassador",
     organization: "University of Jaffna (UOJ)",
-    duration: "2026",
-    desc: "Representing and promoting the IEEE Xtreme programming competition at UOJ.",
+    duration: "Oct - Nov 2026",
+    desc: "Represented UOJ as University Ambassador for the 24-hour competitive programming competition, coordinating programme, finance, and public visibility activities alongside End-of-Course exams.",
     imgSrc: "/assets/images/volunteering/ieee_xtream.png",
     type: "events"
   },
   {
+    role: "OC Member",
+    organization: "IEEE SLSWYC 2026",
+    duration: "Sep 2026",
+    desc: "Served on the Organizing Committee as Webmaster and Public Visibility contributor for the IEEE Sri Lanka Section Student | YP | WIE Congress 2026 at Club Palm Bay Hotel, Marawila.",
+    imgSrc: "/assets/images/volunteering/congress.png",
+    type: "events"
+  },
+  {
     role: "Program Team Member",
-    organization: "Yarl Insight",
-    duration: "2026",
-    desc: "Contributed as a program team member for Yarl Insight, supporting event organization, participant coordination, and workshop logistics.",
+    organization: "Yarl Insight 3.0 (IEEE SB UOJ)",
+    duration: "July 2026",
+    desc: "Served on the Organizing Committee Program Team for Yarl Insight 3.0, the flagship two-day summer school of the IEEE Student Branch University of Jaffna.",
     imgSrc: "/assets/images/volunteering/yarl_insight.jpeg",
+    type: "events"
+  },
+  {
+    role: "Student Engagement Lead",
+    organization: "AWS Student Community Day 2026",
+    duration: "April 2026",
+    desc: "Coordinated student outreach and engagement for the national community day event.",
+    imgSrc: "/assets/images/volunteering/aws_cloud_club_community_day.png",
     type: "events"
   }
 ];

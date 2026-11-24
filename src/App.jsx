@@ -10,7 +10,7 @@ import Skill from "./components/Skill";
 import Work from "./components/Work";
 import DevOpsProjects from "./components/DevOpsProjects";
 
-import { ReactLenis, useLenis } from 'lenis/react';
+import { ReactLenis } from 'lenis/react';
 import { gsap } from "gsap";    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
@@ -95,7 +95,7 @@ const MainPortfolio = () => {
         <meta name="author" content="Pasidu Chamod" />
         <link rel="canonical" href="https://pasidu-chamod.vercel.app" />
       </Helmet>
-      <Preloader />
+      <Preloader onComplete={() => ScrollTrigger.refresh()} />
       <Header />
       <main>
         <Hero />

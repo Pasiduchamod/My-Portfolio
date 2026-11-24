@@ -56,6 +56,11 @@ const skillItem = [
     desc: "Library",
   },
   {
+    imgSrc: "/assets/images/Tools_icons/nextjs.svg",
+    label: "Next.js",
+    desc: "React Framework",
+  },
+  {
     imgSrc: "/assets/images/Tools_icons/nodejs.svg",
     label: "NodeJS",
     desc: "Web Server",
@@ -64,6 +69,11 @@ const skillItem = [
     imgSrc: "/assets/images/Tools_icons/expressjs.svg",
     label: "ExpressJS",
     desc: "Node Framework",
+  },
+  {
+    imgSrc: "/assets/images/Tools_icons/nestjs.svg",
+    label: "NestJS",
+    desc: "Backend Framework",
   },
   {
     imgSrc: "/assets/images/Tools_icons/laravel.jpg",
@@ -96,6 +106,11 @@ const skillItem = [
     imgSrc: "/assets/images/Tools_icons/firebase.svg",
     label: "Firebase",
     desc: "Backend & DB",
+  },
+  {
+    imgSrc: "/assets/images/Tools_icons/supabase.svg",
+    label: "Supabase",
+    desc: "DB & Auth",
   },
   {
     imgSrc: "/assets/images/Tools_icons/postman.svg",

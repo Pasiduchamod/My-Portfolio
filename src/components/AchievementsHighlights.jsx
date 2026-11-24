@@ -21,6 +21,12 @@ const achievements = [
     desc: "Achieved the Legend Tier in Google Arcade by mastering advanced Google Cloud and development challenges that tested real-world problem-solving skills.",
     fit: "contain"
   },
+  {
+    imgSrc: "/assets/images/achievements/aws_new_voices.jpg",
+    title: "AWS New Voices Program",
+    desc: "Completed the 4-session AWS New Voices Program with The Grundel Coaching Team, refining public speaking and stage presence to share technical insights with the cloud community.",
+    fit: "contain"
+  },
 ];
 
 const AchievementsHighlights = () => {

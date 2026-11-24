@@ -1,5 +1,78 @@
 export const galleryAlbums = [
   {
+    "id": "album_19",
+    "title": "IEEE Xtreme 20.0 – University of Jaffna",
+    "category": "Organized Events",
+    "date": "2026-10-31",
+    "location": "University of Jaffna",
+    "description": "Represented the University of Jaffna as University Ambassador for the 24-hour IEEE Xtreme 20.0 competitive programming competition, coordinating programme, finance, and public visibility activities alongside End-of-Course exams.",
+    "coverUrl": "/assets/images/Gallery/IEEEXtreme%2020.0%202026-10-31/xtreme%201.jpg",
+    "photos": [
+      "/assets/images/Gallery/IEEEXtreme%2020.0%202026-10-31/xtreme%201.jpg",
+      "/assets/images/Gallery/IEEEXtreme%2020.0%202026-10-31/xtreme%202.jpeg",
+      "/assets/images/Gallery/IEEEXtreme%2020.0%202026-10-31/xtreme%203.jpeg",
+      "/assets/images/Gallery/IEEEXtreme%2020.0%202026-10-31/xtreme%204.jpeg",
+      "/assets/images/Gallery/IEEEXtreme%2020.0%202026-10-31/xtreme%205.jpeg"
+    ]
+  },
+  {
+    "id": "album_18",
+    "title": "IEEE Sri Lanka Section Student | YP | WIE Congress 2026",
+    "category": "Organized Events",
+    "date": "2026-09-18",
+    "location": "Club Palm Bay Hotel, Marawila",
+    "description": "Served on the Organizing Committee as Webmaster and Student Member Activities Committee member, managing the official congress web presence and contributing to Public Visibility and event coordination.",
+    "coverUrl": "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%201.jpeg",
+    "photos": [
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%201.jpeg",
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%202.jpeg",
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%203.jpeg",
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%204.jpeg",
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%205.jpeg",
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%206.jpeg",
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%207.jpeg",
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%208.jpeg",
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%209.jpeg",
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%2010.jpeg",
+      "/assets/images/Gallery/IEEE%20Congress%202026%202026-09-18/congress%2011.jpeg"
+    ]
+  },
+  {
+    "id": "album_17",
+    "title": "AWS Community Day Sri Lanka 2026",
+    "category": "Workshops & Talks",
+    "date": "2026-09-11",
+    "location": "BMICH, Colombo",
+    "description": "Represented the AWS Student Builder Group at the University of Jaffna, exploring cloud engineering practices and sessions including \"Building Crash-proof AI Agents with Strands, Amazon AgentCore and Temporal\" by Shubham Londhe.",
+    "coverUrl": "/assets/images/Gallery/AWS%20Community%20Day%202026%202026-09-11/aws%201.webp",
+    "photos": [
+      "/assets/images/Gallery/AWS%20Community%20Day%202026%202026-09-11/aws%201.webp",
+      "/assets/images/Gallery/AWS%20Community%20Day%202026%202026-09-11/aws%202.webp",
+      "/assets/images/Gallery/AWS%20Community%20Day%202026%202026-09-11/aws%203.webp",
+      "/assets/images/Gallery/AWS%20Community%20Day%202026%202026-09-11/aws%204.webp",
+      "/assets/images/Gallery/AWS%20Community%20Day%202026%202026-09-11/aws%205.webp"
+    ]
+  },
+  {
+    "id": "album_20",
+    "title": "Yarl Insight 3.0 | Two-Day Summer School",
+    "category": "Organized Events",
+    "date": "2026-07-25",
+    "location": "University of Jaffna",
+    "description": "Served on the Organizing Committee – Program Team for Yarl Insight 3.0, the flagship two-day summer school of the IEEE Student Branch University of Jaffna, bringing together students, speakers, and organizers.",
+    "coverUrl": "/assets/images/Gallery/Yarl%20Insight%203.0%202026-07-24/yarlinsight%201.jpg",
+    "photos": [
+      "/assets/images/Gallery/Yarl%20Insight%203.0%202026-07-24/yarlinsight%201.jpg",
+      "/assets/images/Gallery/Yarl%20Insight%203.0%202026-07-24/yarlinsight%202.jpg",
+      "/assets/images/Gallery/Yarl%20Insight%203.0%202026-07-24/yarlinsight%203.jpg",
+      "/assets/images/Gallery/Yarl%20Insight%203.0%202026-07-24/yarlinsight%204.jpg",
+      "/assets/images/Gallery/Yarl%20Insight%203.0%202026-07-24/yarlinsight%205.jpg",
+      "/assets/images/Gallery/Yarl%20Insight%203.0%202026-07-24/yarlinsight%206.jpg",
+      "/assets/images/Gallery/Yarl%20Insight%203.0%202026-07-24/yarlinsight%207.jpg",
+      "/assets/images/Gallery/Yarl%20Insight%203.0%202026-07-24/yarlinsight%208.jpg"
+    ]
+  },
+  {
     "id": "album_12",
     "title": "UOJ Coders V5.0 Grand Finale",
     "category": "Hackathons",

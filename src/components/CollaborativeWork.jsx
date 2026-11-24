@@ -3,6 +3,13 @@ import ProjectCard from "./ProjectCard";
 
 const collaborativeWorks = [
   {
+    imgSrc: "/assets/images/projects/vergo.png",
+    title: "Vergo - Full-Stack E-Commerce & POS Platform",
+    tags: ["Next.js", "NestJS", "Supabase", "Team Project"],
+    links: { live: "https://vergo.lk", repo: "https://github.com/Vergo-Wear" },
+    isProduction: true,
+  },
+  {
     imgSrc: "/assets/images/projects/creatorsspace.png",
     title: "Creators-Space E-Learning Management System",
     tags: ["Team Project", "Open Source"],
@@ -43,7 +50,7 @@ const CollaborativeWork = () => {
 
         <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
           {collaborativeWorks.map(
-            ({ imgSrc, title, desc, tags, links }, key) => (
+            ({ imgSrc, title, desc, tags, links, isProduction }, key) => (
               <ProjectCard
                 key={key}
                 imgSrc={imgSrc}
@@ -51,6 +58,7 @@ const CollaborativeWork = () => {
                 desc={desc}
                 tags={tags}
                 links={links}
+                isProduction={isProduction}
                 classes="reveal-up"
               />
             )
